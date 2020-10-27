@@ -11,3 +11,14 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
 }
+
+/*BIKIN CUSTOM CSSNYA DISINU GUIS SEMISAL GADA DIBOOTSTRAPPNYA*/
+
+.nav-link-custom:hover {
+  color: #FCCA53 !important;
+} 
+
+.nav-link-custom.active {
+  color: #FCCA53 !important;
+  font-weight: bold;
+} 

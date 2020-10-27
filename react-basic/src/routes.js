@@ -9,6 +9,9 @@
 import Login from "pages/Login";
 import Home from "pages/Home";
 import Dashboard from "pages/Dashboard";
+import Services from "pages/Services";
+import AboutUs from "pages/AboutUs";
+import OurPartnerts from "pages/OurPartnerts";
 
 export const APP_ROUTE = [
   {
@@ -25,11 +28,36 @@ export const APP_ROUTE = [
     component: Home,
     restricted: false,
   },
+
   {
     name: "Dashboard",
     path: "/dashboard",
     exact: true,
     component: Dashboard,
     private: true,
+  },
+
+  {
+    name: "Services",
+    path: "/services",
+    exact: true,
+    component: Services,
+    restricted: false,
+  },
+
+  {
+    name: "AboutUs",
+    path: "/aboutus",
+    exact: true,
+    component: AboutUs,
+    restricted: false,
+  },
+
+  {
+    name: "OurPartnerts",
+    path: "/ourpartnerts",
+    exact: true,
+    component: OurPartnerts,
+    restricted: false,
   },
 ];
