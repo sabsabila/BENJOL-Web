@@ -53,17 +53,17 @@ const Dashboard = () => {
 
   return (
     <div>
-      <Navbar bg="light" expand="lg">
+      <Navbar bg="light" variant="light" expand="md">
         <Container>
           <Link to="/">
-            <Navbar.Brand color="white">Dashboard</Navbar.Brand>
+            <Navbar.Brand>BENJOL | <i> Bengkel Jadi Online</i></Navbar.Brand>
           </Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
             <Nav className="ml-auto">
-              <Button variant="primary" onClick={_onLogout}>
-                Logout
-              </Button>
+              <Nav.Link href="/services" className="nav-link-custom">Services</Nav.Link>
+              <Nav.Link href="/aboutus" className="nav-link-custom">About Us</Nav.Link>
+              <Nav.Link href="/ourpartnerts" className="nav-link-custom">Our Partnerts</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
