@@ -18,6 +18,25 @@ code {
   background-attachment: fixed;
   background-repeat: no-repeat;
   margin-block-end: -3%;
+  position: fixed;
+  position: -webkit-sticky;
+  /* Safari */
+  top: 0;
+  bottom: 0;
 
+}
 
+/*BIKIN CUSTOM CSSNYA DISINU GUIS SEMISAL GADA DIBOOTSTRAPPNYA*/
+
+.nav-link-custom:hover {
+  color: #FCCA53 !important;
+}
+
+.nav-link-custom.active {
+  color: #FCCA53 !important;
+  font-weight: bold;
+}
+
+.benjol-brand {
+  margin-left: -5%;
 }
