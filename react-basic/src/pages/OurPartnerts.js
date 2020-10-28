@@ -41,7 +41,7 @@ const Services = () => {
     <div>
       <Navbar fixed="top" bg="white" variant="light" expand="md" >
         <Container>
-          <Link to="/">
+          <Link to="/dashboard">
             <Navbar.Brand className="benjol-brand">BENJOL | <i> Bengkel Jadi Online</i></Navbar.Brand>
           </Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
