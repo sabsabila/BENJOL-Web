@@ -24,6 +24,7 @@ import { Link, useHistory } from "react-router-dom";
 import { logout } from "utils/auth";
 import axios from "axios";
 import { GET_FILMS } from "constants/urls";
+import image from '../images/bawah.png';
 
 const Dashboard = () => {
   const history = useHistory();
@@ -53,21 +54,24 @@ const Dashboard = () => {
 
   return (
     <div>
-      <Navbar bg="light" variant="light" expand="md">
+      <Navbar fixed="top" bg="white" variant="light" expand="md" >
         <Container>
           <Link to="/">
-            <Navbar.Brand>BENJOL | <i> Bengkel Jadi Online</i></Navbar.Brand>
+            <Navbar.Brand className="benjol-brand">BENJOL | <i> Bengkel Jadi Online</i></Navbar.Brand>
           </Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-            <Nav className="ml-auto">
-              <Nav.Link href="/services" className="nav-link-custom">Services</Nav.Link>
-              <Nav.Link href="/aboutus" className="nav-link-custom">About Us</Nav.Link>
+          <Nav className="ml-auto benjol-brand">
+              <Nav.Link href="/services" className="nav-link-custom" >Services</Nav.Link>
+              <Nav.Link href="/aboutus" className="nav-link-custom" active>About Us</Nav.Link>
               <Nav.Link href="/ourpartnerts" className="nav-link-custom">Our Partnerts</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
+      <div style={{ paddingLeft: 0, paddingRight: 0, paddingBottom:0}}>
+          <img style={{ paddingLeft: 0, paddingRight: 0, paddingBottom:0}} className="bottom_image img-fluid" src= {image} alt=""/>  
+      </div>
       <Jumbotron>
         <Container>
           <h1>Dashboard</h1>
