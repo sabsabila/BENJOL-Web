@@ -5,9 +5,19 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  /* background-image: url("https://www.pexels.com/photo/selective-focus-photography-of-orange-tabby-cat-1170986/"); */
+
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
+}
+
+.bottom_image {
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  margin-block-end: -3%;
+
+
 }

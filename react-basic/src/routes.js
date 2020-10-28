@@ -9,6 +9,7 @@
 import Login from "pages/Login";
 import Home from "pages/Home";
 import Dashboard from "pages/Dashboard";
+import Bengkel from "pages/Bengkel";
 
 export const APP_ROUTE = [
   {
@@ -31,5 +32,12 @@ export const APP_ROUTE = [
     exact: true,
     component: Dashboard,
     private: true,
+  },
+  {
+    name: "Bengkel",
+    path: "/bengkel",
+    exact: true,
+    component: Bengkel,
+    restricted: false,
   },
 ];
