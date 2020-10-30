@@ -38,7 +38,7 @@ const Services = () => {
   }, []);
 
   return (
-    <div>
+    <div className="benjol-bg-sm">
       <Navbar fixed="top" bg="white" variant="light" expand="md" >
         <Container>
           <Link to="/dashboard">
@@ -53,7 +53,7 @@ const Services = () => {
             </Nav>
           </Navbar.Collapse>
         </Container>
-      </Navbar>
+      </Navbar>   
       <div style={{ paddingLeft: 0, paddingRight: 0, paddingBottom:0}}>
           <img style={{ paddingLeft: 0, paddingRight: 0, paddingBottom:0}} className="bottom_image img-fluid" src= {image} alt=""/>  
       </div>
