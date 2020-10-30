@@ -54,9 +54,6 @@ const Services = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>   
-      <div style={{ paddingLeft: 0, paddingRight: 0, paddingBottom:0}}>
-          <img style={{ paddingLeft: 0, paddingRight: 0, paddingBottom:0}} className="bottom_image img-fluid" src= {image} alt=""/>  
-      </div>
     </div>
   );
 };
