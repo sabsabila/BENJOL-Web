@@ -47,14 +47,11 @@ const Services = () => {
           <Nav className="ml-auto benjol-brand">
               <Nav.Link href="/services" className="nav-link-custom" >Services</Nav.Link>
               <Nav.Link href="/aboutus" className="nav-link-custom">About Us</Nav.Link>
-              <Nav.Link href="/ourpartnerts" className="nav-link-custom">Our Partnerts</Nav.Link>
+              <Nav.Link href="/ourpartnerts" className="nav-link-custom" active>Our Partnerts</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <div style={{ paddingLeft: 0, paddingRight: 0, paddingBottom:0}}>
-          <img style={{ paddingLeft: 0, paddingRight: 0, paddingBottom:0}} className="bottom_image img-fluid" src= {image} alt=""/>  
-      </div>
       <Container style={{ paddingTop: 100 }} className="d-flex align-items-center">
       <Row style={{width: '100%'}}>
         <Col lg={6}></Col>
