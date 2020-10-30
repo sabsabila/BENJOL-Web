@@ -69,7 +69,7 @@ const Dashboard = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>   
-      <Container style={{backgroundColor:"red"}}>
+      <Container >
         <Row className="d-flex float-right flex-column p-5" style={{textAlign:"right",top:"10%"}}>
           <Col md={{span:12,offset:1}} className="mt-lg-5" style={{display:"flex p-5"}}>
             <h1 style={{color:"#FCCA53"}} className="font-weight-bold">Mitra Bengkel</h1>
