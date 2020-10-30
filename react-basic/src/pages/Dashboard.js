@@ -63,7 +63,7 @@ const Dashboard = () => {
           <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto benjol-brand">
               <Nav.Link href="/services" className="nav-link-custom" >Services</Nav.Link>
-              <Nav.Link href="/aboutus" className="nav-link-custom">About Us</Nav.Link>
+              <Nav.Link href="/aboutus" className="nav-link-custom" >About Us</Nav.Link>
               <Nav.Link href="/ourpartnerts" className="nav-link-custom">Our Partnerts</Nav.Link>
             </Nav>
           </Navbar.Collapse>
