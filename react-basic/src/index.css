@@ -40,6 +40,11 @@ code {
   font-weight: bold;
 }
 
+.color-yellow {
+  color: #FCCA53 !important;
+  font-weight: bold;
+}
+
 .benjol-brand {
   margin-left: -5%;
 }
