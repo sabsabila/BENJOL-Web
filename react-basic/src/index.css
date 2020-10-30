@@ -1,8 +1,6 @@
 body {
   margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
-    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
-    sans-serif;
+  font-family: "Muli", sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   /* background-image: url("https://www.pexels.com/photo/selective-focus-photography-of-orange-tabby-cat-1170986/"); */
@@ -35,6 +33,11 @@ code {
 .nav-link-custom.active {
   color: #FCCA53 !important;
   font-weight: bold;
+}
+
+.button-custom {
+  background-color: #FCCA53 !important;
+  border-color: #FCCA53 !important;
 }
 
 .benjol-brand {
