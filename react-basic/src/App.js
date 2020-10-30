@@ -8,6 +8,7 @@ import { createBrowserHistory } from "history";
 import { APP_ROUTE } from "./routes";
 import PrivateRoute from "components/PrivateRoute";
 import PublicRoute from "components/PublicRoute";
+import 'bootstrap/dist/css/bootstrap.min.css'
 
 export const history = createBrowserHistory();
 
@@ -43,3 +44,4 @@ const App = () => {
 };
 
 export default App;
+
