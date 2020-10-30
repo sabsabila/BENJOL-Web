@@ -14,9 +14,8 @@ import {
 import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 import { GET_FILMS } from "constants/urls";
-import image from '../images/bawah.png';
 
-const Services = () => {
+const AboutUs = () => {
   const history = useHistory();
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState(false);
@@ -38,7 +37,7 @@ const Services = () => {
   }, []);
 
   return (
-    <div>
+    <div className="benjol-bg-sm">
       <Navbar fixed="top" bg="white" variant="light" expand="md" >
         <Container>
           <Link to="/dashboard">
@@ -53,12 +52,35 @@ const Services = () => {
             </Nav>
           </Navbar.Collapse>
         </Container>
-      </Navbar>
-      <div style={{ paddingLeft: 0, paddingRight: 0, paddingBottom:0}}>
-          <img style={{ paddingLeft: 0, paddingRight: 0, paddingBottom:0}} className="bottom_image img-fluid" src= {image} alt=""/>  
-      </div>
+      </Navbar>   
+      <Jumbotron>
+        <div class="col-12 col-md-6 col-lg-5 pb-3">
+          <h3 class="font-benjol pb-2 color-yellow align-center display-5">
+            Menyediakan Kebutuhan Bengkel Anda
+          </h3>
+          <p class="font-benjol pb-2 align-center display-5">
+          Kami merasakan keresahan para pengendara motor saat terjadi masalah pada motornya. Oleh karena itu, kami memberikan 
+          layanan untuk mempermudah pencarian bengkel - bengkel di sekitar. Kami juga menyediakan layanan antar - jemput untuk 
+          mempermudah anda melakukan servis terhadap motor anda.
+          </p>
+        </div>
+        <div class="col-12 col-md-12 col-lg-5 pb-3">
+          <h3 class="font-benjol pb-2 color-yellow align-center display-5">
+            Hubungi Kami
+          </h3>
+          
+          <p> Benjol </p>
+          <p> Benjol_id </p>
+          <p> Benjol_id </p>
+          <p> Benjol@gmail.com </p>
+        </div>
+      </Jumbotron>
     </div>
   );
 };
 
-export default Services;
+export default AboutUs;
+
+
+
+

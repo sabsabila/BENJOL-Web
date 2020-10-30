@@ -13,6 +13,7 @@ import Bengkel from "pages/Bengkel";
 import Services from "pages/Services";
 import AboutUs from "pages/AboutUs";
 import OurPartnerts from "pages/OurPartnerts";
+import Spareparts from "pages/Spareparts";
 
 export const APP_ROUTE = [
   {
@@ -66,4 +67,13 @@ export const APP_ROUTE = [
     component: OurPartnerts,
     restricted: false,
   },
+
+  {
+    name: "Spareparts",
+    path: "/services/spareparts",
+    exact: true,
+    component: Spareparts,
+    restricted: false,
+  },
+
 ];
