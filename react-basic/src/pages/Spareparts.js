@@ -12,7 +12,9 @@ import {
   Alert,
   Card,
 
-} from "react-bootstrap";
+} 
+
+from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 import { GET_FILMS } from "constants/urls";
@@ -23,14 +25,14 @@ const Spareparts = () => {
   const history = useHistory();
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState(false);
-  const [film, setFilm] = React.useState();
+  const [sparepart, setSparepart] = React.useState();
 
   React.useEffect(() => {
     axios
       .get(GET_FILMS)
       .then((res) => {
         setLoading(false);
-        setFilm(res.data);
+        setSparepart(res.data);
       })
       .catch((err) => {
         setLoading(false);
@@ -41,7 +43,7 @@ const Spareparts = () => {
   }, []);
 
   return (
-    <div>
+    <div className="benjol-bg-sm">
       <Navbar fixed="top" bg="white" variant="light" expand="md" >
         <Container>
           <Link to="/dashboard">
@@ -61,39 +63,32 @@ const Spareparts = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <div style={{ paddingLeft: 0, paddingRight: 0, paddingBottom:0}}>
-          <img style={{ paddingLeft: 0, paddingRight: 0, paddingBottom:0}} className="bottom_image img-fluid" src= {image} alt=""/>  
-      </div>
-      <Container >
+     
+      <Container>
         <br /><br /><br />
-                <Row>
-                    {spareparts.map((item, key) => {
-                        return (
-                            <Col md="2" key={key}>
-                                <Card className="mb-4 box-shadow">
-                                    <Card.Img
-                                        top
-                                        width="100%"
-                                        src={item.src}
-                                        alt={item.altText}
-                                    />
-                                    <Card.Body>
-                                        <Card.Text>{item.description}</Card.Text>
-                                        <div className="d-flex justify-content-between align-items-center">
-                                          <Button outline className="button-custom" size="sm">
-                                            View
-                                          </Button>
-                                          <small className="text-muted">
-                                              {item.time}
-                                          </small>
-                                        </div>
-                                    </Card.Body>
-                                </Card>
-                            </Col>
-                        );
-                    })}
-                </Row>
-            </Container>
+        <Row>
+          {spareparts.map((item, key) => {
+          return (
+            <Col md="2" key={key}>
+                <Card className="mb-4 box-shadow">
+                  <Card.Img top width="100%" src={item.src} alt={item.altText} />
+                  <Card.Body>
+                  <Card.Text>{item.description}</Card.Text>
+                  <div className="d-flex justify-content-between align-items-center">
+                    <Button outline className="button-custom" size="sm">
+                      View
+                    </Button>
+                    <small className="text-muted">
+                      {item.time}
+                    </small>
+                  </div>
+                  </Card.Body>
+                </Card>
+            </Col>
+          );
+          })}
+        </Row>
+      </Container>
     </div>
   );
 };
