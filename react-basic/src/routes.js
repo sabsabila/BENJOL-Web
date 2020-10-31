@@ -62,7 +62,7 @@ export const APP_ROUTE = [
 
   {
     name: "OurPartnerts",
-    path: "/ourpartnerts",
+    path: "/ourpartners",
     exact: true,
     component: OurPartnerts,
     restricted: false,
@@ -70,7 +70,7 @@ export const APP_ROUTE = [
 
   {
     name: "Spareparts",
-    path: "/services/spareparts",
+    path: "/spareparts",
     exact: true,
     component: Spareparts,
     restricted: false,
