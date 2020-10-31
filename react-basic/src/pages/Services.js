@@ -54,7 +54,7 @@ const Services = () => {
           <Nav className="ml-auto benjol-brand">
               <Nav.Link href="/services" className="nav-link-custom" active>Services</Nav.Link>
               <Nav.Link href="/aboutus" className="nav-link-custom">About Us</Nav.Link>
-              <Nav.Link href="/ourpartnerts" className="nav-link-custom">Our Partnerts</Nav.Link>
+              <Nav.Link href="/ourpartners" className="nav-link-custom">Our Partners</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
