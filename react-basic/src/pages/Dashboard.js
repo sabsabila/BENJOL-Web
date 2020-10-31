@@ -76,7 +76,9 @@ const Dashboard = () => {
             <h1 style={{color:"#FCCA53"}} className="font-weight-bold">Terpercaya Untuk Anda</h1>
             <p className="font-italic" style={{marginTop:"10%"}}>BENJOL (Bengkel Jadi Online) adalah aplikasi untuk memudahkan</p>
             <p className="font-italic">anda untuk mencari bengkel motor di sekitar anda.</p>
+            <Link to="/spareparts">
             <Button variant="light" size="sm" className="mb-2 btn-sm font-weight-bold shadow p-3 mb-5 bg-white rounded rounded" style={{color:"#FCCA53", backgroundColor:"white", borderColor:"white"}}>Cari Sparepart</Button>
+            </Link>
           </Col>
         </Row>      
       </Container>
