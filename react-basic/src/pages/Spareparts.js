@@ -43,7 +43,7 @@ const Spareparts = () => {
   }, []);
 
   return (
-    <div>
+    <div className="benjol-bg-sm">
       <Navbar fixed="top" bg="white" variant="light" expand="md" >
         <Container>
           <Link to="/dashboard">
@@ -64,36 +64,31 @@ const Spareparts = () => {
         </Container>
       </Navbar>
      
-      <Container >
+      <Container>
         <br /><br /><br />
-                <Row>
-                    {spareparts.map((item, key) => {
-                        return (
-                            <Col md="2" key={key}>
-                                <Card className="mb-4 box-shadow">
-                                    <Card.Img
-                                        top
-                                        width="100%"
-                                        src={item.src}
-                                        alt={item.altText}
-                                    />
-                                    <Card.Body>
-                                        <Card.Text>{item.description}</Card.Text>
-                                        <div className="d-flex justify-content-between align-items-center">
-                                          <Button outline className="button-custom" size="sm">
-                                            View
-                                          </Button>
-                                          <small className="text-muted">
-                                              {item.time}
-                                          </small>
-                                        </div>
-                                    </Card.Body>
-                                </Card>
-                            </Col>
-                        );
-                    })}
-                </Row>
-            </Container>
+        <Row>
+          {spareparts.map((item, key) => {
+          return (
+            <Col md="2" key={key}>
+                <Card className="mb-4 box-shadow">
+                  <Card.Img top width="100%" src={item.src} alt={item.altText} />
+                  <Card.Body>
+                  <Card.Text>{item.description}</Card.Text>
+                  <div className="d-flex justify-content-between align-items-center">
+                    <Button outline className="button-custom" size="sm">
+                      View
+                    </Button>
+                    <small className="text-muted">
+                      {item.time}
+                    </small>
+                  </div>
+                  </Card.Body>
+                </Card>
+            </Col>
+          );
+          })}
+        </Row>
+      </Container>
     </div>
   );
 };
