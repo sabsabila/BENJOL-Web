@@ -43,7 +43,7 @@ const Spareparts = () => {
   }, []);
 
   return (
-    <div>
+    <div className="benjol-bg-sm">
       <Navbar fixed="top" bg="white" variant="light" expand="md" >
         <Container>
           <Link to="/dashboard">
@@ -64,7 +64,7 @@ const Spareparts = () => {
         </Container>
       </Navbar>
      
-      <Container >
+      <Container style={{display:"flow"}}>
         <br /><br /><br />
                 <Row>
                     {spareparts.map((item, key) => {
