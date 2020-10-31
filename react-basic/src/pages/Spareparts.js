@@ -52,7 +52,7 @@ const Spareparts = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
           <Form inline expand="md" >
-            <Form.Control type="text" placeholder="Cari bengkel..." size="sm" className="mb-1 mr-sm-1 rounded-pill" style={{ width: 400 }} />
+            <Form.Control type="text" placeholder="Cari sparepart..." size="sm" className="mb-1 mr-sm-1 rounded-pill" style={{ width: 400 }} />
             <Button size="sm" className="button-custom rounded-pill mr-sm-5" type="submit">Search</Button>
           </Form>
           <Nav className="ml-auto benjol-brand">
