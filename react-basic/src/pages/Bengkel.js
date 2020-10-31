@@ -28,12 +28,6 @@ const Bengkel = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-
-      <Navbar style={{ paddingLeft: 0, paddingRight: 0, paddingBottom:0}} fixed="bottom">
-        
-          <img className="bottom_image img-fluid" src= {image} alt=""/> 
-          
-      </Navbar>
     </div>
   );
 }

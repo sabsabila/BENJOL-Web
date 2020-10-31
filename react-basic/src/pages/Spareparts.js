@@ -12,7 +12,9 @@ import {
   Alert,
   Card,
 
-} from "react-bootstrap";
+} 
+
+from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 import { GET_FILMS } from "constants/urls";
@@ -23,14 +25,14 @@ const Spareparts = () => {
   const history = useHistory();
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState(false);
-  const [film, setFilm] = React.useState();
+  const [sparepart, setSparepart] = React.useState();
 
   React.useEffect(() => {
     axios
       .get(GET_FILMS)
       .then((res) => {
         setLoading(false);
-        setFilm(res.data);
+        setSparepart(res.data);
       })
       .catch((err) => {
         setLoading(false);
@@ -61,9 +63,7 @@ const Spareparts = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <div style={{ paddingLeft: 0, paddingRight: 0, paddingBottom:0}}>
-          <img style={{ paddingLeft: 0, paddingRight: 0, paddingBottom:0}} className="bottom_image img-fluid" src= {image} alt=""/>  
-      </div>
+     
       <Container >
         <br /><br /><br />
                 <Row>
