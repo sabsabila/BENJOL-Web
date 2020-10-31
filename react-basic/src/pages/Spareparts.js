@@ -56,44 +56,39 @@ const Spareparts = () => {
             <Form.Control type="text" placeholder="Cari bengkel..." size="sm" className="mb-1 mr-sm-1 rounded-pill" />
             <Button size="sm" className="button-custom fa fa-search rounded-pill mr-sm-5" type="submit">Search</Button>
           </Form>
-              <Nav.Link href="/services" className="nav-link-custom" active>Services</Nav.Link>
+              <Nav.Link href="/services" className="nav-link-custom">Services</Nav.Link>
               <Nav.Link href="/aboutus" className="nav-link-custom">About Us</Nav.Link>
-              <Nav.Link href="/ourpartnerts" className="nav-link-custom">Our Partnerts</Nav.Link>
+              <Nav.Link href="/ourpartners" className="nav-link-custom">Our Partners</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
      
-      <Container style={{display:"flow"}}>
+      <Container>
         <br /><br /><br />
-                <Row>
-                    {spareparts.map((item, key) => {
-                        return (
-                            <Col md="2" key={key}>
-                                <Card className="mb-4 box-shadow">
-                                    <Card.Img
-                                        top
-                                        width="100%"
-                                        src={item.src}
-                                        alt={item.altText}
-                                    />
-                                    <Card.Body>
-                                        <Card.Text>{item.description}</Card.Text>
-                                        <div className="d-flex justify-content-between align-items-center">
-                                          <Button outline className="button-custom" size="sm">
-                                            View
-                                          </Button>
-                                          <small className="text-muted">
-                                              {item.time}
-                                          </small>
-                                        </div>
-                                    </Card.Body>
-                                </Card>
-                            </Col>
-                        );
-                    })}
-                </Row>
-            </Container>
+        <Row>
+          {spareparts.map((item, key) => {
+          return (
+            <Col md="2" key={key}>
+                <Card className="mb-4 box-shadow">
+                  <Card.Img top width="100%" src={item.src} alt={item.altText} />
+                  <Card.Body>
+                  <Card.Text>{item.description}</Card.Text>
+                  <div className="d-flex justify-content-between align-items-center">
+                    <Button outline className="button-custom" size="sm">
+                      View
+                    </Button>
+                    <small className="text-muted">
+                      {item.time}
+                    </small>
+                  </div>
+                  </Card.Body>
+                </Card>
+            </Col>
+          );
+          })}
+        </Row>
+      </Container>
     </div>
   );
 };

@@ -12,7 +12,7 @@ import Dashboard from "pages/Dashboard";
 import Bengkel from "pages/Bengkel";
 import Services from "pages/Services";
 import AboutUs from "pages/AboutUs";
-import OurPartnerts from "pages/OurPartnerts";
+import OurPartnerts from "pages/OurPartners";
 import Spareparts from "pages/Spareparts";
 
 export const APP_ROUTE = [
@@ -61,8 +61,8 @@ export const APP_ROUTE = [
   },
 
   {
-    name: "OurPartnerts",
-    path: "/ourpartnerts",
+    name: "OurPartners",
+    path: "/ourpartners",
     exact: true,
     component: OurPartnerts,
     restricted: false,
@@ -70,7 +70,7 @@ export const APP_ROUTE = [
 
   {
     name: "Spareparts",
-    path: "/services/spareparts",
+    path: "/spareparts",
     exact: true,
     component: Spareparts,
     restricted: false,
