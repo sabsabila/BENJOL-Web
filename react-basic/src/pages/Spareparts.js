@@ -56,7 +56,7 @@ const Spareparts = () => {
             <Form.Control type="text" placeholder="Cari bengkel..." size="sm" className="mb-1 mr-sm-1 rounded-pill" />
             <Button size="sm" className="button-custom fa fa-search rounded-pill mr-sm-5" type="submit">Search</Button>
           </Form>
-              <Nav.Link href="/services" className="nav-link-custom" active>Services</Nav.Link>
+              <Nav.Link href="/services" className="nav-link-custom">Services</Nav.Link>
               <Nav.Link href="/aboutus" className="nav-link-custom">About Us</Nav.Link>
               <Nav.Link href="/ourpartners" className="nav-link-custom">Our Partners</Nav.Link>
             </Nav>
