@@ -1,6 +1,6 @@
 body {
   margin: 0;
-  font-family: "muli", sans-serif;
+  font-family: 'muli', sans-serif !important;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -40,14 +40,13 @@ code {
   font-weight: bold;
 }
 
-.color-yellow {
-  color: #FCCA53 !important;
-  font-weight: bold;
-}
-
 .button-custom {
   background-color: #FCCA53 !important;
   border-color: #FCCA53 !important;
+}
+.color-yellow {
+  color: #FCCA53 !important;
+  font-weight: bold;
 }
 
 .benjol-brand {
