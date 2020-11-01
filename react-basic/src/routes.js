@@ -66,16 +66,4 @@ export const APP_ROUTE = [
     component: OurPartnerts,
     restricted: false,
   },
-<<<<<<< HEAD
-=======
-
-  {
-    name: "Spareparts",
-    path: "/spareparts",
-    exact: true,
-    component: Spareparts,
-    restricted: false,
-  },
-
->>>>>>> master
 ];
