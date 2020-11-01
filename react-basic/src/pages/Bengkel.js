@@ -58,25 +58,6 @@ const Spareparts = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <Container style={{ paddingTop: 100 }}>
-      <Button size="sm" className="button-custom center-block rounded-pill" href="ourpartners" type="submit">Join Us!</Button>
-        <Row>
-          {bengkel.map((item, key) => {
-          return (
-            <Col md="3" key={key}>
-              <Media style={{ paddingTop: 30 }}>
-                <img variant='rounded' width={90} height={90} src={item.src} />
-                <Media.Body>
-                  <h6 style={{ paddingLeft: 10, fontSize: 18, fontWeight: "bold"}}>{item.judul}</h6>
-                  <p style={{ paddingLeft: 10, fontSize: 12}}>{item.address}</p>
-                  <p style={{ paddingLeft: 10, fontSize: 12}}>{item.number}</p>
-                </Media.Body>
-              </Media>
-            </Col>
-          );
-          })}
-        </Row>
-      </Container>
     </div>
   );
 };
