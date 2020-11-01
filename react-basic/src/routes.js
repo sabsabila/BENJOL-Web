@@ -13,7 +13,6 @@ import Bengkel from "pages/Bengkel";
 import Services from "pages/Services";
 import AboutUs from "pages/AboutUs";
 import OurPartners from "pages/OurPartners";
-import Spareparts from "pages/Spareparts";
 
 export const APP_ROUTE = [
   {
