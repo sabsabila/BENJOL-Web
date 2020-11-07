@@ -17,7 +17,7 @@ import {
 from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
-import { GET_FILMS } from "constants/urls";
+import { GET_SPAREPART } from "constants/urls";
 import image from '../images/motor.png';
 import spareparts from '../data/spareparts';
 
@@ -26,13 +26,12 @@ const Spareparts = () => {
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState(false);
   const [sparepart, setSparepart] = React.useState();
-  var token = "eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiIxIiwianRpIjoiZjY1ZDcyMzFiYzQ3YmFjNGU3ZTM2M2M0MmE2NGUxNjZhNmIyYTI5N2FkMDNhZjlkZjRmZDcwMzZlMmYxMzI4YWVjYzMwZmQ2Y2NhNjA0YTAiLCJpYXQiOjE2MDQyMzU0NDksIm5iZiI6MTYwNDIzNTQ0OSwiZXhwIjoxNjM1NzcxNDQ5LCJzdWIiOiIxIiwic2NvcGVzIjpbInVzZXIiXX0.DUl5QutyWICjmN-4pDY6W5w4UbGq-BL1p7SLM3JGBpLQqupoyQ7Q4tTBkLK5fwV4eGTJnIwNYmk0Ovy7n4ICoHl3Gd0LAFxd2XNUEmQvURw5E4aqEP4tRZAm7F7EL-w-1dIlyuU9LtIhjKL1coe5U9H-J5Ne7BoUpKpjSOKrUP3zWs9WXzrLZKbexQuq4TZSUWUmU30d3roSRuIm7ZdsLkjzRNyAjNei6pyXgFFdsqdkWRSIP--sk8xF84OUWUZXyiFRXENw7qxuErLvOkFXF581wJmzHM_0WP_DLGwEcKY3Xc04GoPhSOclyj-0ZzjTY5tAqLau4Xsd17oYnWbhHRhKKo_CiWjE_IPhf68ERuNM_YWsSfsSuHp8G9XLm9B22WBIXVfhIwigE_FNaBL7WsuNbApPULZoh3HFywj8tSIskdqSz7aom_Ip3_a02B7mb8g6ZdsinxHndQCLwMFxEz_-0XkjTX7hq-GJJcAJAI5JD1pdgh-21eTpGYncYRl1YnEL9_wHKexgq4mIx3PQYRUxGwz_1shwUlzZe44DpNdOoStVaux9vtp_7L72pSMcxhEBMp9_KX3IO1ZxrrpjP36Fln3o1_wqXWaLV6ru9oZRvKhNmRJZWff9czUyNVZn_30GljIF170EANKLjGAI_yamioVu2fbbO6soK07VkgM";
 
     React.useEffect(() => {
     axios
-      .get('http://127.0.0.1:8000/api/sparepart',{
+      .get(GET_SPAREPART,{
         headers:{
-          'Authorization' : `Bearer ${token}`
+          
         }
       })
       .then((res) => {
