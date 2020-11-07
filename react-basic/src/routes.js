@@ -6,8 +6,6 @@
         halaman login padal udah login)
 */
 
-import Login from "pages/Login";
-import Home from "pages/Home";
 import Dashboard from "pages/Dashboard";
 import Bengkel from "pages/Bengkel";
 import Services from "pages/Services";
@@ -16,24 +14,10 @@ import OurPartners from "pages/OurPartners";
 import Spareparts from "pages/Spareparts";
 
 export const APP_ROUTE = [
-  {
-    name: "Login",
-    path: "/login",
-    exact: true,
-    component: Login,
-    restricted: true,
-  },
-  {
-    name: "Home",
-    path: "/",
-    exact: true,
-    component: Home,
-    restricted: false,
-  },
 
   {
     name: "Dashboard",
-    path: "/dashboard",
+    path: "/",
     exact: true,
     component: Dashboard,
     private: true,

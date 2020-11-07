@@ -7,12 +7,13 @@ import {
   Form,
   Row,
   Col,
+  Alert
 } from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 import { POST_BENGKEL } from "constants/urls";
 import image from '../images/bawah.png';
-import '../index.css'
+import '../index.css';
 
 const qs = require("qs");
 
@@ -26,6 +27,7 @@ const Services = () => {
   const [email, setEmail] = React.useState("");
   const [username, setUsername] = React.useState("");
   const [password, setPassword] = React.useState("");
+  const [show, setShow] = React.useState(false);
 
   const handleSubmit = (e) => {
     //var bodyJson = JSON.parse(requestBody);
@@ -45,7 +47,9 @@ const Services = () => {
      };
      axios(config)
      .then(function (response) {
-       console.log(JSON.stringify(response.data));
+       console.log(response);
+       if(response.status === 200)
+        setShow(true);
      })
      .catch(function (error) {
        console.log(error);
@@ -56,7 +60,7 @@ const Services = () => {
     <div className="benjol-bg">
       <Navbar fixed="top" bg="white" variant="light" expand="md" >
         <Container>
-          <Link to="/dashboard">
+          <Link to="/">
             <Navbar.Brand className="benjol-brand">BENJOL | <i> Bengkel Jadi Online</i></Navbar.Brand>
           </Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -74,6 +78,9 @@ const Services = () => {
         <Col lg={6}></Col>
         <Col  lg={6} className="d-flex flex-column align-items-center">
           <Form onSubmit={handleSubmit} style={{width: '100%'}} className="d-flex flex-column align-items-center">
+              <Alert show={show} variant="success" onClose={() => setShow(false)} dismissible>
+                Registered Successfully !
+              </Alert>
               <Form.Label><h2 style={{ color: '#636363' }}>BE OUR PARTNER</h2></Form.Label>
               <Form.Group style={{ paddingRight: 55 }}>
                 <Form.Label><p style={{ color: '#636363', paddingLeft: 10, fontSize: 14, marginBottom:'-10%' }}>Bengkel Name</p></Form.Label>

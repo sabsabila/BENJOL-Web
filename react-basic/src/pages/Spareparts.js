@@ -17,7 +17,7 @@ import {
 from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
-import { GET_SPAREPART } from "constants/urls";
+import { GET_SPAREPART , POST_SEARCH} from "constants/urls";
 import image from '../images/motor.png';
 import spareparts from '../data/spareparts';
 
@@ -26,6 +26,36 @@ const Spareparts = () => {
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState(false);
   const [sparepart, setSparepart] = React.useState();
+  const [keyword, setKeyword] = React.useState();
+  const [show, setShow] = React.useState(false);
+
+  const qs = require("qs");
+
+  const handleClick = (e) => {
+    //var bodyJson = JSON.parse(requestBody);
+    e.preventDefault();
+    const data = qs.stringify({
+     'name': keyword
+     });
+     var config = {
+       method: 'post',
+       url: POST_SEARCH,
+       headers: { },
+       data : data
+     };
+     axios(config)
+      .then(function (response) {
+        setLoading(false);
+        //console.log(response.data);
+        if(response.data.length == 0){
+          setShow(true);
+        }
+        setSparepart(response.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }
 
     React.useEffect(() => {
     axios
@@ -48,17 +78,18 @@ const Spareparts = () => {
 
   return (
     <div className="benjol-bg-sm">
-      <Navbar fixed="top" bg="white" variant="light" expand="md" >
+      
+      <Navbar sticky="top" bg="white" variant="light" expand="md" >
         <Container>
-          <Link to="/dashboard">
+          <Link to="/">
             <Navbar.Brand className="benjol-brand">BENJOL | <i> Bengkel Jadi Online</i></Navbar.Brand>
           </Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto benjol-brand">
           <Form inline expand="lg">
-            <Form.Control type="text" placeholder="Cari sparepart" size="sm" className="mb-1 mr-sm-1 rounded-pill" style={{ width: 400 }} />
-            <Button size="sm" className="button-custom fa fa-search rounded-pill mr-sm-5" type="submit">Search</Button>
+            <Form.Control value={keyword} type="text" placeholder="Cari sparepart" size="sm" className="mb-1 mr-sm-1 rounded-pill" style={{ width: 400 }} onChange={e=>{setKeyword(e.target.value)}} />
+            <Button onClick={handleClick} size="sm" className="button-custom fa fa-search rounded-pill mr-sm-5" type="submit">Search</Button>
           </Form>
               <Nav.Link href="/services" className="nav-link-custom">Services</Nav.Link>
               <Nav.Link href="/aboutus" className="nav-link-custom">About Us</Nav.Link>
@@ -67,6 +98,10 @@ const Spareparts = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>
+
+      <Alert show={show} variant="danger" onClose={() => setShow(false)} dismissible>
+        <Alert.Heading>Not Found.</Alert.Heading>
+      </Alert>
      
       <Container>
         <br /><br /><br />
