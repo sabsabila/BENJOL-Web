@@ -94,13 +94,15 @@ axios
         </Container>
       </Navbar>
 
-      <Alert show={show} variant="danger" onClose={() => setShow(false)} dismissible>
+      <Container>
+        <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
+          <br/>
+          <Button size="sm" className="button-custom rounded-pill" href="ourpartners" type="submit">Join Us!</Button> 
+          <br />
+        </div>
+        <Alert show={show} variant="danger" onClose={() => setShow(false)} dismissible>
         <Alert.Heading>Not Found.</Alert.Heading>
       </Alert>
-
-      <Container>
-      <Button size="sm" className="button-custom rounded-pill" href="ourpartners" type="submit">Join Us!</Button> 
-        <br /><br /><br />
         {loading ? (
             <Row>
               <Col>
