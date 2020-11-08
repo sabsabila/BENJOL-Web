@@ -68,12 +68,12 @@ const Services = () => {
           <Nav className="ml-auto benjol-brand">
               <Nav.Link href="/services" className="nav-link-custom" >Services</Nav.Link>
               <Nav.Link href="/aboutus" className="nav-link-custom">About Us</Nav.Link>
-              <Nav.Link href="/ourpartners" className="nav-link-custom" active>Our Partners</Nav.Link>
+              <Nav.Link href="/bengkel" className="nav-link-custom" active>Our Partners</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
       </Navbar>
-      <Container style={{ paddingTop: 100 }} className="d-flex align-items-center">
+      <Container style={{ paddingTop: 60 }} className="d-flex align-items-center">
       <Row style={{width: '100%'}}>
         <Col lg={6}></Col>
         <Col  lg={6} className="d-flex flex-column align-items-center">
@@ -81,7 +81,7 @@ const Services = () => {
               <Alert show={show} variant="success" onClose={() => setShow(false)} dismissible>
                 Registered Successfully !
               </Alert>
-              <Form.Label><h2 style={{ color: '#636363' }}>BE OUR PARTNER</h2></Form.Label>
+              <Form.Label style={{ paddingTop: 10 }} ><h2 style={{ color: '#636363' }}>BE OUR PARTNER</h2></Form.Label>
               <Form.Group style={{ paddingRight: 55 }}>
                 <Form.Label><p style={{ color: '#636363', paddingLeft: 10, fontSize: 14, marginBottom:'-10%' }}>Bengkel Name</p></Form.Label>
                 <Form.Control required type="text" value={namaBengkel} placeholder="Bengkel Name" className="mb-1 mr-sm-1 rounded-pill" style={{ width: '125%' }} onChange={e=>setNamaBengkel(e.target.value)} />

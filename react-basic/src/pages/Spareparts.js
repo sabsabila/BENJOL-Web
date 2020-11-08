@@ -17,9 +17,8 @@ import {
 from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
-import { GET_SPAREPART , POST_SEARCH} from "constants/urls";
+import { GET_SPAREPART , POST_SEARCH_SPAREPART} from "constants/urls";
 import image from '../images/motor.png';
-import spareparts from '../data/spareparts';
 
 const Spareparts = () => {
   const history = useHistory();
@@ -39,7 +38,7 @@ const Spareparts = () => {
      });
      var config = {
        method: 'post',
-       url: POST_SEARCH,
+       url: POST_SEARCH_SPAREPART,
        headers: { },
        data : data
      };
@@ -47,7 +46,7 @@ const Spareparts = () => {
       .then(function (response) {
         setLoading(false);
         //console.log(response.data);
-        if(response.data.length == 0){
+        if(response.data.length === 0){
           setShow(true);
         }
         setSparepart(response.data);
@@ -93,7 +92,7 @@ const Spareparts = () => {
           </Form>
               <Nav.Link href="/services" className="nav-link-custom">Services</Nav.Link>
               <Nav.Link href="/aboutus" className="nav-link-custom">About Us</Nav.Link>
-              <Nav.Link href="/ourpartners" className="nav-link-custom">Our Partners</Nav.Link>
+              <Nav.Link href="/bengkel" className="nav-link-custom">Our Partners</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
@@ -134,10 +133,9 @@ const Spareparts = () => {
                   <Card.Body>
                   <Card.Img top width="100%" src={image} alt="sparepart" />
                   <Card.Text>{value.name}</Card.Text>
+                  <Card.Text>{value.bengkel}</Card.Text>
+                  <Card.Text>{value.address}</Card.Text>
                   <div className="d-flex justify-content-between align-items-center">
-                    <Button outline className="button-custom" size="sm">
-                      View
-                    </Button>
                     <small className="text-muted">
                       {value.price}
                     </small>

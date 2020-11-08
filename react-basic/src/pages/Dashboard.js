@@ -56,7 +56,7 @@ const Dashboard = () => {
     <div className="benjol-bg">
       <Navbar fixed="top" bg="white" variant="light" expand="md" >
         <Container>
-          <Link to="/dashboard">
+          <Link to="/">
             <Navbar.Brand className="benjol-brand">BENJOL | <i> Bengkel Jadi Online</i></Navbar.Brand>
           </Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
@@ -64,7 +64,7 @@ const Dashboard = () => {
           <Nav className="ml-auto benjol-brand">
               <Nav.Link href="/services" className="nav-link-custom" >Services</Nav.Link>
               <Nav.Link href="/aboutus" className="nav-link-custom">About Us</Nav.Link>
-              <Nav.Link href="/ourpartners" className="nav-link-custom">Our Partners</Nav.Link>
+              <Nav.Link href="/bengkel" className="nav-link-custom">Our Partners</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
