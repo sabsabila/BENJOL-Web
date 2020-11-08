@@ -74,10 +74,11 @@ const Dashboard = () => {
           <Col md={{span:12,offset:1}} className="mt-lg-5" style={{display:"flex p-5"}}>
             <h1 style={{color:"#FCCA53"}} className="font-weight-bold">Mitra Bengkel</h1>
             <h1 style={{color:"#FCCA53"}} className="font-weight-bold">Terpercaya Untuk Anda</h1>
-            <p className="font-italic" style={{marginTop:"10%"}}>BENJOL (Bengkel Jadi Online) adalah aplikasi untuk memudahkan</p>
-            <p className="font-italic">anda untuk mencari bengkel motor di sekitar anda.</p>
+            <p className="font-italic" style={{marginTop:"10%"}}>BENJOL (Bengkel Jadi Online) adalah aplikasi untuk memudahkan anda</p>
+            <p className="font-italic">untuk mencari bengkel motor di sekitar anda, booking jadwal service anda,</p>
+            <p className="font-italic">dan mencari sparepart yang anda butuhkan.</p>
             <Link to="/spareparts">
-            <Button variant="light" size="sm" className="mb-2 btn-sm font-weight-bold shadow p-3 mb-5 bg-white rounded rounded" style={{color:"#FCCA53", backgroundColor:"white", borderColor:"white"}}>Cari Sparepart</Button>
+            <Button variant="light" size="sm" className="mb-2 btn-sm font-weight-bold shadow p-3 mb-5 bg-white rounded-pill" style={{color:"#FCCA53", backgroundColor:"white", borderColor:"white"}}>Cari Sparepart</Button>
             </Link>
           </Col>
         </Row>      

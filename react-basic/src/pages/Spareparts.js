@@ -132,9 +132,17 @@ const Spareparts = () => {
                 <Card className="mb-4 box-shadow">
                   <Card.Body>
                   <Card.Img top width="100%" src={image} alt="sparepart" />
-                  <Card.Text>{value.name}</Card.Text>
-                  <Card.Text>{value.bengkel}</Card.Text>
-                  <Card.Text>{value.address}</Card.Text>
+                  <Card.Text style={{color:"#FCCA53", fontWeight: "bold"}}>{value.name}</Card.Text>
+                  <div className="d-flex justify-content-between align-items-center">
+                    <small style={{fontWeight: "bold"}}>
+                      {value.bengkel}
+                    </small>
+                  </div>
+                  <div className="d-flex justify-content-between align-items-center">
+                    <small>
+                      {value.address}
+                    </small>
+                  </div>
                   <div className="d-flex justify-content-between align-items-center">
                     <small className="text-muted">
                       {value.price}

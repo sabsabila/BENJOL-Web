@@ -129,9 +129,9 @@ axios
                           <Media style={{ paddingTop: 30 }}>
                             <img variant='rounded' width={90} height={90} src={image} />
                             <Media.Body>
-                              <h6 style={{ paddingLeft: 10, fontSize: 18, fontWeight: "bold"}}>{value.name}</h6>
+                              <h6 style={{ paddingLeft: 10, fontSize: 16, fontWeight: "bold", color:"#FCCA53"}}>{value.name}</h6>
                               <p style={{ paddingLeft: 10, fontSize: 12}}>{value.address}</p>
-                              {/* <p style={{ paddingLeft: 10, fontSize: 12}}>{item.number}</p> */}
+                              <p className="text-muted" style={{ paddingLeft: 10, fontSize: 12}}>{value.phone_number}</p>
                             </Media.Body>
                           </Media>
                       </Col>
