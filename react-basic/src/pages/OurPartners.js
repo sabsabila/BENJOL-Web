@@ -18,16 +18,14 @@ import '../index.css';
 const qs = require("qs");
 
 const Services = () => {
-  const history = useHistory();
-  const [loading, setLoading] = React.useState(true);
-  const [error, setError] = React.useState(false);
-  const [film, setFilm] = React.useState();
   const [namaBengkel, setNamaBengkel] = React.useState("");
   const [address, setAddress] = React.useState("");
   const [email, setEmail] = React.useState("");
   const [username, setUsername] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [show, setShow] = React.useState(false);
+  const [emailError, setEmailError] = React.useState(false);
+  const [serverError, setServerError] = React.useState(false);
 
   const handleSubmit = (e) => {
     //var bodyJson = JSON.parse(requestBody);
@@ -48,11 +46,22 @@ const Services = () => {
      axios(config)
      .then(function (response) {
        console.log(response);
-       if(response.status === 200)
+       if(response.status === 200){
         setShow(true);
+        setEmail("");
+        setNamaBengkel("");
+        setAddress("");
+        setUsername("")
+        setPassword("");
+      }
      })
      .catch(function (error) {
        console.log(error);
+       if(error.response.status === 401){
+        setEmailError(true);
+       }else{
+         setServerError(true);
+       }
      });
   }
 
@@ -81,6 +90,15 @@ const Services = () => {
               <Alert show={show} variant="success" onClose={() => setShow(false)} dismissible>
                 Registered Successfully !
               </Alert>
+
+              <Alert show={emailError} variant="danger" onClose={() => setEmailError(false)} dismissible>
+                Please input a valid email !
+              </Alert>
+
+              <Alert show={serverError} variant="danger" onClose={() => setServerError(false)} dismissible>
+                Error. Try again !
+              </Alert>
+
               <Form.Label style={{ paddingTop: 10 }} ><h2 style={{ color: '#636363' }}>BE OUR PARTNER</h2></Form.Label>
               <Form.Group style={{ paddingRight: 55 }}>
                 <Form.Label><p style={{ color: '#636363', paddingLeft: 10, fontSize: 14, marginBottom:'-10%' }}>Bengkel Name</p></Form.Label>

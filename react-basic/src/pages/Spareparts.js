@@ -18,7 +18,7 @@ from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 import { GET_SPAREPART , POST_SEARCH_SPAREPART} from "constants/urls";
-import image from '../images/motor.png';
+import sourceImage from '../images/motor.png';
 
 const Spareparts = () => {
   const history = useHistory();
@@ -27,6 +27,7 @@ const Spareparts = () => {
   const [sparepart, setSparepart] = React.useState();
   const [keyword, setKeyword] = React.useState();
   const [show, setShow] = React.useState(false);
+  const [image, setImage] = React.useState(sourceImage);
 
   const qs = require("qs");
 
@@ -49,7 +50,6 @@ const Spareparts = () => {
         if(response.data.length === 0){
           setShow(true);
         }
-        setSparepart(response.data);
       })
       .catch(function (error) {
         console.log(error);
@@ -63,9 +63,14 @@ const Spareparts = () => {
           
         }
       })
-      .then((res) => {
+      .then((response) => {
         setLoading(false);
-        setSparepart(res.data);
+        setSparepart(response.data);
+        console.log(response.data.picture);
+        if(response.data.picture != null){
+          setImage(response.data.picture);
+        }
+        setSparepart(response.data);
       })
       .catch((err) => {
         setLoading(false);
@@ -129,28 +134,28 @@ const Spareparts = () => {
                   {p.map((value) => {
                     return (
                       <Col md="2">
-                <Card className="mb-4 box-shadow">
-                  <Card.Body>
-                  <Card.Img top width="100%" src={image} alt="sparepart" />
-                  <Card.Text style={{color:"#FCCA53", fontWeight: "bold"}}>{value.name}</Card.Text>
-                  <div className="d-flex justify-content-between align-items-center">
-                    <small style={{fontWeight: "bold"}}>
-                      {value.bengkel}
-                    </small>
-                  </div>
-                  <div className="d-flex justify-content-between align-items-center">
-                    <small>
-                      {value.address}
-                    </small>
-                  </div>
-                  <div className="d-flex justify-content-between align-items-center">
-                    <small className="text-muted">
-                      {value.price}
-                    </small>
-                  </div>
-                  </Card.Body>
-                </Card>
-            </Col>
+                          <Card className="mb-4 box-shadow">
+                            <Card.Body>
+                            <Card.Img top width="100%" src={image} alt="sparepart" />
+                            <Card.Text style={{color:"#FCCA53", fontWeight: "bold"}}>{value.name}</Card.Text>
+                            <div className="d-flex justify-content-between align-items-center">
+                              <small style={{fontWeight: "bold"}}>
+                                {value.bengkel}
+                              </small>
+                            </div>
+                            <div className="d-flex justify-content-between align-items-center">
+                              <small>
+                                {value.address}
+                              </small>
+                            </div>
+                            <div className="d-flex justify-content-between align-items-center">
+                              <small className="text-muted">
+                                {value.price}
+                              </small>
+                            </div>
+                            </Card.Body>
+                          </Card>
+                      </Col>
                     );
                   })}
                 </Row>
