@@ -21,6 +21,7 @@ import { GET_SPAREPART , POST_SEARCH_SPAREPART} from "constants/urls";
 import image from '../images/motor.png';
 import imageEmpty from '../images/empty.png';
 import noImage from '../images/noImage.png';
+import sourceImage from '../images/motor.png';
 
 const Spareparts = () => {
   const history = useHistory();
@@ -47,7 +48,7 @@ const Spareparts = () => {
      axios(config)
       .then(function (response) {
         setLoading(false);
-        //console.log(response.data);
+        console.log(response.data);
         if(response.data.length === 0){
           setShow(true);
         }
@@ -64,9 +65,10 @@ const Spareparts = () => {
         headers:{
         }
       })
-      .then((res) => {
+      .then((response) => {
         setLoading(false);
-        setSparepart(res.data);
+        setSparepart(response.data);
+        console.log(response.data.picture);
       })
       .catch((err) => {
         setLoading(false);
@@ -103,7 +105,7 @@ const Spareparts = () => {
         <Alert.Heading>Not Found.</Alert.Heading>
       </Alert>
      
-      <Container>
+      <Container style={{maxHeight: "25rem", overflowX: "auto",  overflowY: "auto", position :"relative"}}>
         <br /><br /><br />
        {loading ? (
           <Row>
@@ -155,23 +157,16 @@ const Spareparts = () => {
                           </Card>
                         </Col>
                       );
-                    // }
-                   
+                
                   })}
                 </Row>
               );
-                // }
+               
             })
         ) : (
           // error && <Alert variant="danger">Error bang</Alert>
          <Container className="d-flex justify-content-center" style={{width:'30%'}}>
            <Col className="col-md-auto" style={{marginBottom:'50em'}}>
-           {/* <Card className="mb-4 box-shadow">
-            <Card.Body>
-              <p>No items in sparepart lists</p>
-              <Card.Img top width="100%" src={imageEmpty} alt="sparepart" />
-            </Card.Body>
-          </Card> */}
           <img src={imageEmpty} alt="empty sparepart"style={{width:"100%",height:"100%"}}></img>
           <h6 style={{fontWeight:"bold"}}>No items in sparepart lists</h6>
          </Col>
