@@ -132,7 +132,7 @@ axios
                       return (
                         <Col md="3">
                           <Media style={{ paddingTop: 30 }}>
-                            {(value.picture == null)?<img variant='rounded' width={90} height={90} src={noImage} alt="noImage"/> : <img variant='rounded' width={90} height={90} src={image} alt="bengkel"/>}
+                            {(value.picture == null)?<img variant='rounded' width={90} height={90} src={noImage} alt="noImage"/> : <img variant='rounded' width={90} height={90} src={value.picture} alt="bengkel"/>}
                             
                             <Media.Body>
                               <h6 style={{ paddingLeft: 10, fontSize: 16, fontWeight: "bold", color:"#FCCA53"}}>{value.name}</h6>

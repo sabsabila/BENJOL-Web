@@ -89,7 +89,7 @@ const Spareparts = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
           <Form inline expand="md" >
-            <Form.Control value={keyword} style={{width: 400}} type="text" placeholder="Cari bengkel" size="sm" className="mb-1 mr-sm-1 rounded-pill" onChange={e=>{setKeyword(e.target.value)}} />
+            <Form.Control value={keyword} style={{width: 400}} type="text" placeholder="Cari sparepart" size="sm" className="mb-1 mr-sm-1 rounded-pill" onChange={e=>{setKeyword(e.target.value)}} />
             <Button onClick={handleClick} size="sm" className="button-custom fa fa-search rounded-pill mr-sm-5" type="submit">Search</Button>
           </Form>
           <Nav className="ml-auto benjol-brand">
@@ -135,7 +135,7 @@ const Spareparts = () => {
                         <Col md="2">
                           <Card className="mb-4 box-shadow">
                             <Card.Body>
-                            {(value.picture == null)?<Card.Img top width="100%" src={noImage} alt="sparepart"  /> : <Card.Img top width="100%" src={image} alt="sparepart"  />}
+                            {(value.picture == null)?<Card.Img top width="100%" src={noImage} alt="sparepart"  /> : <Card.Img top width="100%" src={value.picture} alt="sparepart"  />}
                             <Card.Text style={{color:"#FCCA53", fontWeight: "bold"}}>{value.name}</Card.Text>
                             <div className="d-flex justify-content-between align-items-center">
                               <small style={{fontWeight: "bold"}}>
