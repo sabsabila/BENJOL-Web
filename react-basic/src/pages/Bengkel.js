@@ -94,7 +94,6 @@ axios
           </Navbar.Collapse>
         </Container>
       </Navbar>
-
         <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
           <br/>
           <Link to="/ourpartners">
