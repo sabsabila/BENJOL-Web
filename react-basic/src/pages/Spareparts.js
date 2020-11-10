@@ -18,6 +18,9 @@ from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 import { GET_SPAREPART , POST_SEARCH_SPAREPART} from "constants/urls";
+import image from '../images/motor.png';
+import imageEmpty from '../images/empty.png';
+import noImage from '../images/noImage.png';
 import sourceImage from '../images/motor.png';
 
 const Spareparts = () => {
@@ -60,7 +63,6 @@ const Spareparts = () => {
     axios
       .get(GET_SPAREPART,{
         headers:{
-          
         }
       })
       .then((response) => {
@@ -86,11 +88,11 @@ const Spareparts = () => {
           </Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
-          <Nav className="ml-auto benjol-brand">
-          <Form inline expand="lg">
-            <Form.Control value={keyword} type="text" placeholder="Cari sparepart" size="sm" className="mb-1 mr-sm-1 rounded-pill" style={{ width: 400 }} onChange={e=>{setKeyword(e.target.value)}} />
+          <Form inline expand="md" >
+            <Form.Control value={keyword} style={{width: 400}} type="text" placeholder="Cari bengkel" size="sm" className="mb-1 mr-sm-1 rounded-pill" onChange={e=>{setKeyword(e.target.value)}} />
             <Button onClick={handleClick} size="sm" className="button-custom fa fa-search rounded-pill mr-sm-5" type="submit">Search</Button>
           </Form>
+          <Nav className="ml-auto benjol-brand">
               <Nav.Link href="/services" className="nav-link-custom">Services</Nav.Link>
               <Nav.Link href="/aboutus" className="nav-link-custom">About Us</Nav.Link>
               <Nav.Link href="/bengkel" className="nav-link-custom">Our Partners</Nav.Link>
@@ -125,14 +127,15 @@ const Spareparts = () => {
               return accumulator;
             }, [])
             .map((p) => {
+              
               return (
                 <Row className="mb-4">
                   {p.map((value) => {
-                    return (
-                      <Col md="2">
+                       return (
+                        <Col md="2">
                           <Card className="mb-4 box-shadow">
                             <Card.Body>
-                            <Card.Img top width="100%" src={value.image} alt="sparepart" />
+                            {(value.picture == null)?<Card.Img top width="100%" src={noImage} alt="sparepart"  /> : <Card.Img top width="100%" src={image} alt="sparepart"  />}
                             <Card.Text style={{color:"#FCCA53", fontWeight: "bold"}}>{value.name}</Card.Text>
                             <div className="d-flex justify-content-between align-items-center">
                               <small style={{fontWeight: "bold"}}>
@@ -149,16 +152,25 @@ const Spareparts = () => {
                                 {value.price}
                               </small>
                             </div>
+                            
                             </Card.Body>
                           </Card>
-                      </Col>
-                    );
+                        </Col>
+                      );
+                
                   })}
                 </Row>
               );
+               
             })
         ) : (
-          error && <Alert variant="danger">Error bang</Alert>
+          // error && <Alert variant="danger">Error bang</Alert>
+         <Container className="d-flex justify-content-center" style={{width:'30%'}}>
+           <Col className="col-md-auto" style={{marginBottom:'50em'}}>
+          <img src={imageEmpty} alt="empty sparepart"style={{width:"100%",height:"100%"}}></img>
+          <h6 style={{fontWeight:"bold"}}>No items in sparepart lists</h6>
+         </Col>
+         </Container>
         )}
       </Container>
     </div>
