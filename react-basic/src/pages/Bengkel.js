@@ -94,12 +94,15 @@ axios
         </Container>
       </Navbar>
 
-      <Container>
         <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
           <br/>
-          <Button size="sm" className="button-custom rounded-pill" href="ourpartners" type="submit">Join Us!</Button> 
+          <Link to="/ourpartners">
+            <Button size="sm" className="button-custom rounded-pill" type="submit">Join Us!</Button>
+          </Link> 
           <br />
         </div>
+
+      <Container style={{maxHeight: "25rem", overflowX: "auto",  overflowY: "auto", position :"relative"}}>
         <Alert show={show} variant="danger" onClose={() => setShow(false)} dismissible>
         <Alert.Heading>Not Found.</Alert.Heading>
       </Alert>
@@ -124,7 +127,7 @@ axios
               }, [])
               .map((p) => {
                 return (
-                  <Row >
+                  <Row>
                     {p.map((value) => {
                       return (
                         <Col md="3">

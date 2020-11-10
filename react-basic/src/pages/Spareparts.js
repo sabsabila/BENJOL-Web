@@ -27,7 +27,6 @@ const Spareparts = () => {
   const [sparepart, setSparepart] = React.useState();
   const [keyword, setKeyword] = React.useState();
   const [show, setShow] = React.useState(false);
-  const [image, setImage] = React.useState(sourceImage);
 
   const qs = require("qs");
 
@@ -46,10 +45,11 @@ const Spareparts = () => {
      axios(config)
       .then(function (response) {
         setLoading(false);
-        //console.log(response.data);
+        console.log(response.data);
         if(response.data.length === 0){
           setShow(true);
         }
+        setSparepart(response.data);
       })
       .catch(function (error) {
         console.log(error);
@@ -67,10 +67,6 @@ const Spareparts = () => {
         setLoading(false);
         setSparepart(response.data);
         console.log(response.data.picture);
-        if(response.data.picture != null){
-          setImage(response.data.picture);
-        }
-        setSparepart(response.data);
       })
       .catch((err) => {
         setLoading(false);
@@ -107,7 +103,7 @@ const Spareparts = () => {
         <Alert.Heading>Not Found.</Alert.Heading>
       </Alert>
      
-      <Container>
+      <Container style={{maxHeight: "25rem", overflowX: "auto",  overflowY: "auto", position :"relative"}}>
         <br /><br /><br />
        {loading ? (
           <Row>
@@ -136,7 +132,7 @@ const Spareparts = () => {
                       <Col md="2">
                           <Card className="mb-4 box-shadow">
                             <Card.Body>
-                            <Card.Img top width="100%" src={image} alt="sparepart" />
+                            <Card.Img top width="100%" src={value.image} alt="sparepart" />
                             <Card.Text style={{color:"#FCCA53", fontWeight: "bold"}}>{value.name}</Card.Text>
                             <div className="d-flex justify-content-between align-items-center">
                               <small style={{fontWeight: "bold"}}>

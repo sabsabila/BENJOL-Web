@@ -48,6 +48,8 @@ const Services = () => {
        console.log(response);
        if(response.status === 200){
         setShow(true);
+        setEmailError(false);
+        setServerError(false);
         setEmail("");
         setNamaBengkel("");
         setAddress("");
@@ -57,6 +59,7 @@ const Services = () => {
      })
      .catch(function (error) {
        console.log(error);
+       setShow(false);
        if(error.response.status === 401){
         setEmailError(true);
        }else{
