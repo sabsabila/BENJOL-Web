@@ -21,7 +21,6 @@ import { GET_SPAREPART , POST_SEARCH_SPAREPART} from "constants/urls";
 import image from '../images/motor.png';
 import imageEmpty from '../images/empty.png';
 import noImage from '../images/noImage.png';
-import sourceImage from '../images/motor.png';
 
 const Spareparts = () => {
   const history = useHistory();
