@@ -21,7 +21,6 @@ import { GET_SPAREPART , POST_SEARCH_SPAREPART} from "constants/urls";
 import image from '../images/motor.png';
 import imageEmpty from '../images/empty.png';
 import noImage from '../images/noImage.png';
-import sourceImage from '../images/motor.png';
 
 const Spareparts = () => {
   const history = useHistory();
@@ -89,7 +88,7 @@ const Spareparts = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
           <Form inline expand="md" >
-            <Form.Control value={keyword} style={{width: 400}} type="text" placeholder="Cari bengkel" size="sm" className="mb-1 mr-sm-1 rounded-pill" onChange={e=>{setKeyword(e.target.value)}} />
+            <Form.Control value={keyword} style={{width: 400}} type="text" placeholder="Cari sparepart" size="sm" className="mb-1 mr-sm-1 rounded-pill" onChange={e=>{setKeyword(e.target.value)}} />
             <Button onClick={handleClick} size="sm" className="button-custom fa fa-search rounded-pill mr-sm-5" type="submit">Search</Button>
           </Form>
           <Nav className="ml-auto benjol-brand">
