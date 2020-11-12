@@ -24,6 +24,8 @@ const [error, setError] = React.useState(false);
 const [bengkel, setBengkel] = React.useState();
 const [keyword, setKeyword] = React.useState();
 const [show, setShow] = React.useState(false);
+const imagesss = require('../images/motor.png');
+
 
 const qs = require("qs");
 
@@ -132,7 +134,9 @@ axios
                       return (
                         <Col md="3">
                           <Media style={{ paddingTop: 30 }}>
-                            {(value.picture == null)?<img variant='rounded' width={90} height={90} src={noImage} alt="noImage"/> : <img variant='rounded' width={90} height={90} src={value.picture} alt="bengkel"/>}
+                            {(value.profile_picture == null)
+                              ? <img variant='rounded' width={90} height={90} src={noImage} alt="noImage"/> 
+                              : <img variant='rounded' width={90} height={90} src={`${value.profile_picture}`} alt="bengkel"/>}
                             
                             <Media.Body>
                               <h6 style={{ paddingLeft: 10, fontSize: 16, fontWeight: "bold", color:"#FCCA53"}}>{value.name}</h6>
