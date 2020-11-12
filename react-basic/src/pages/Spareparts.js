@@ -17,8 +17,7 @@ import {
 from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
-import { GET_SPAREPART , POST_SEARCH_SPAREPART} from "constants/urls";
-import image from '../images/motor.png';
+import { BASE_URL, GET_SPAREPART , POST_SEARCH_SPAREPART} from "constants/urls";
 import imageEmpty from '../images/empty.png';
 import noImage from '../images/noImage.png';
 
@@ -104,8 +103,8 @@ const Spareparts = () => {
         <Alert.Heading>Not Found.</Alert.Heading>
       </Alert>
      
-      <Container style={{maxHeight: "25rem", overflowX: "auto",  overflowY: "auto", position :"relative"}}>
-        <br /><br /><br />
+      <Container style={{maxHeight: "auto", overflowX: "auto",  overflowY: "auto", position :"relative"}}>
+        <br />
        {loading ? (
           <Row>
             <Col>
@@ -121,8 +120,8 @@ const Spareparts = () => {
         ) : sparepart ? (
           sparepart
             .reduce(function (accumulator, currentValue, currentIndex, array) {
-              if (currentIndex % 5 === 0)
-                accumulator.push(array.slice(currentIndex, currentIndex + 5));
+              if (currentIndex % 6 === 0)
+                accumulator.push(array.slice(currentIndex, currentIndex + 6));
               return accumulator;
             }, [])
             .map((p) => {
@@ -132,11 +131,11 @@ const Spareparts = () => {
                   {p.map((value) => {
                        return (
                         <Col md="2">
-                          <Card className="mb-4 box-shadow">
+                          <Card className="mb-2 box-shadow">
                             <Card.Body>
                             {(value.picture == null)
-                            ? <Card.Img top width="100%" src={noImage} alt="sparepart"  /> 
-                            : <Card.Img top width="100%" src={`${value.picture}`} alt="sparepart"/>}
+                            ? <Card.Img top width="100%" width={100} height={100} src={noImage} alt="sparepart"  /> 
+                            : <Card.Img top width="100%" width={100} height={100} src={BASE_URL+value.picture} alt="sparepart"/>}
                             <Card.Text style={{color:"#FCCA53", fontWeight: "bold"}}>{value.name}</Card.Text>
                             <div className="d-flex justify-content-between align-items-center">
                               <small style={{fontWeight: "bold"}}>
@@ -150,7 +149,7 @@ const Spareparts = () => {
                             </div>
                             <div className="d-flex justify-content-between align-items-center">
                               <small className="text-muted">
-                                {value.price}
+                                Rp. {value.price}
                               </small>
                             </div>
                             
