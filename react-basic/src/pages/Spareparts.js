@@ -141,7 +141,6 @@ const Spareparts = () => {
                               <small style={{fontWeight: "bold"}}>
                                 {value.bengkel}
                               </small>
-                              
                             </div>
                             <div className="d-flex justify-content-between align-items-center">
                               <small>
