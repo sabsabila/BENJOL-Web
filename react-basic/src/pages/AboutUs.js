@@ -19,6 +19,8 @@ import facebook from '../images/facebook.png';
 import instagram from '../images/instagram.png'
 import twitter from '../images/twitter.png'
 import gmail from '../images/gmail.png'
+import call from '../images/call.png'
+import whatsapp from '../images/whatsapp.png'
 
 const AboutUs = () => {
   const history = useHistory();
@@ -108,6 +110,24 @@ const AboutUs = () => {
               />
               <Media.Body>
                 <p style={{ paddingLeft: 10}}>Benjol@gmail.com</p>
+              </Media.Body>
+            </Media>
+            <Media>
+              <img
+                width={20}
+                height={20}
+                src={whatsapp}
+              />
+              <Media.Body>
+                <p style={{ paddingLeft: 10}}>082145492740</p>
+              </Media.Body>
+              <img
+                width={20}
+                height={20}
+                src={call}
+              />
+              <Media.Body>
+                <p style={{ paddingLeft: 10}}>082145492740</p>
               </Media.Body>
             </Media>
           </Col>

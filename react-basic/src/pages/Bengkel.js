@@ -23,7 +23,6 @@ const [error, setError] = React.useState(false);
 const [bengkel, setBengkel] = React.useState();
 const [keyword, setKeyword] = React.useState();
 const [show, setShow] = React.useState(false);
-const imagesss = require('../images/motor.png');
 
 
 const qs = require("qs");
