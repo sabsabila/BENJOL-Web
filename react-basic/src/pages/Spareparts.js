@@ -103,7 +103,7 @@ const Spareparts = () => {
         <Alert.Heading>Not Found.</Alert.Heading>
       </Alert>
      
-      <Container style={{maxHeight: "auto", overflowX: "auto",  overflowY: "auto", position :"relative"}}>
+      <Container style={{maxHeight: "25rem", overflowX: "auto",  overflowY: "auto", position :"relative"}}>
         <br />
        {loading ? (
           <Row>
