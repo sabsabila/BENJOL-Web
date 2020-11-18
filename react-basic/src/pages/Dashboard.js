@@ -30,22 +30,6 @@ const Dashboard = () => {
   const history = useHistory();
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState(false);
-  const [film, setFilm] = React.useState();
-
-  React.useEffect(() => {
-    axios
-      .get(GET_FILMS)
-      .then((res) => {
-        setLoading(false);
-        setFilm(res.data);
-      })
-      .catch((err) => {
-        setLoading(false);
-        setError(true);
-        console.warn(err);
-      });
-    return () => {};
-  }, []);
 
   const _onLogout = () => {
     logout();
