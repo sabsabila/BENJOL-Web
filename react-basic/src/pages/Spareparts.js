@@ -46,11 +46,11 @@ const Spareparts = () => {
      axios(config)
       .then(function (response) {
         setLoading(false);
-        console.log(response.data);
-        if(response.data.length === 0){
+        console.log(response.data.spareparts);
+        if(response.data.spareparts.length === 0){
           setShow(true);
         }
-        setSparepart(response.data);
+        setSparepart(response.data.spareparts);
       })
       .catch(function (error) {
         console.log(error);
@@ -65,8 +65,8 @@ const Spareparts = () => {
       })
       .then((response) => {
         setLoading(false);
-        setSparepart(response.data);
-        console.log(response.data.picture);
+        setSparepart(response.data.spareparts);
+        console.log(response.data.spareparts.picture);
       })
       .catch((err) => {
         setLoading(false);
@@ -99,8 +99,13 @@ const Spareparts = () => {
         </Container>
       </Navbar>
 
-      <Alert show={show} variant="danger" onClose={() => setShow(false)} dismissible>
-        <Alert.Heading>Not Found.</Alert.Heading>
+      <Alert show={show} onClose={() => setShow(false)} dismissible>
+        <Container className="d-flex justify-content-center" style={{width:'30%'}}>
+           <Col className="col-md-auto" style={{marginBottom:'50em'}}>
+          <img src={imageEmpty} alt="empty sparepart"style={{width:"100%",height:"100%"}}></img>
+          <h6 style={{fontWeight:"bold"}}>Sparepart is not found in the list</h6>
+         </Col>
+         </Container>
       </Alert>
      
       <Container style={{maxHeight: "25rem", overflowX: "auto",  overflowY: "auto", position :"relative"}}>
