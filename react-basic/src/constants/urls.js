@@ -2,8 +2,7 @@
   Ini constant Url, buat ngedefine Url rest API biasa
 */
 
-export const BASE_URL = "http://benjol.bike";
-
+export const BASE_URL = "http://api.benjol.bike";
 export const GET_FILMS = `${BASE_URL}/films`;
 export const POST_BENGKEL = `${BASE_URL}/api/registerBengkel`
 export const POST_SEARCH_SPAREPART = `${BASE_URL}/api/searchSparepart`
