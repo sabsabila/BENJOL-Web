@@ -20,7 +20,7 @@ export const APP_ROUTE = [
     path: "/",
     exact: true,
     component: Dashboard,
-    private: true,
+    private: false,
   },
   {
     name: "Bengkel",
