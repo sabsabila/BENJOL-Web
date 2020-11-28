@@ -15,6 +15,7 @@ import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 import { BASE_URL, GET_BENGKEL, POST_SEARCH_BENGKEL } from "constants/urls";
 import noImage from '../images/noImage.png';
+import imageEmpty from '../images/empty.png';
 
 const Bengkels = () => {
 const history = useHistory();
@@ -23,7 +24,6 @@ const [error, setError] = React.useState(false);
 const [bengkel, setBengkel] = React.useState();
 const [keyword, setKeyword] = React.useState();
 const [show, setShow] = React.useState(false);
-const imagesss = require('../images/motor.png');
 
 
 const qs = require("qs");
@@ -44,10 +44,10 @@ const qs = require("qs");
       .then(function (response) {
         setLoading(false);
         //console.log(response.data);
-        if(response.data.length === 0){
+        if(response.data.bengkels.length === 0){
           setShow(true);
         }
-        setBengkel(response.data);
+        setBengkel(response.data.bengkels);
       })
       .catch(function (error) {
         console.log(error);
@@ -63,7 +63,7 @@ axios
   })
   .then(function (response) {
     setLoading(false);
-    setBengkel(response.data);
+    setBengkel(response.data.bengkels);
   })
   .catch((err) => {
     setLoading(false);
@@ -104,9 +104,14 @@ axios
         </div>
 
       <Container style={{maxHeight: "25rem", overflowX: "auto",  overflowY: "auto", position :"relative"}}>
-        <Alert show={show} variant="danger" onClose={() => setShow(false)} dismissible>
-        <Alert.Heading>Not Found.</Alert.Heading>
-      </Alert>
+        <Alert show={show} onClose={() => setShow(false)} dismissible>
+          <Container className="d-flex justify-content-center" style={{width:'30%'}}>
+            <Col className="col-md-auto" style={{marginBottom:'50em'}}>
+            <img src={imageEmpty} alt="empty sparepart"style={{width:"100%",height:"100%"}}></img>
+            <h6 style={{fontWeight:"bold"}}>Bengkel is not found in the list</h6>
+          </Col>
+          </Container>
+        </Alert>
         {loading ? (
             <Row>
               <Col>
