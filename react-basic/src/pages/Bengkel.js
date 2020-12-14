@@ -4,13 +4,12 @@ import {
   Container,
   Nav,
   Navbar,
-  Form, FormControl,
+  Form,
   Row,
   Col, Spinner,
-  Media, Image, Alert
-} 
+  Media, Alert
+} from "react-bootstrap";
 
-from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 import { BASE_URL, GET_BENGKEL, POST_SEARCH_BENGKEL } from "constants/urls";
@@ -27,9 +26,7 @@ const [show, setShow] = React.useState(false);
 
 
 const qs = require("qs");
-
   const handleClick = (e) => {
-    //var bodyJson = JSON.parse(requestBody);
     e.preventDefault();
     const data = qs.stringify({
      'name': keyword
@@ -58,7 +55,6 @@ React.useEffect(() => {
 axios
   .get(GET_BENGKEL,{
     headers:{
-      
     }
   })
   .then(function (response) {
@@ -70,8 +66,6 @@ axios
     setError(true);
     console.warn(err);
   });
-
-  return () => {};
 }, []);
 
   return (
@@ -103,7 +97,7 @@ axios
           <br />
         </div>
 
-      <Container style={{maxHeight: "25rem", overflowX: "auto",  overflowY: "auto", position :"relative"}}>
+      <Container style={{maxHeight: "30rem", overflowX: "auto",  overflowY: "auto", position :"relative"}}>
         <Alert show={show} onClose={() => setShow(false)} dismissible>
           <Container className="d-flex justify-content-center" style={{width:'30%'}}>
             <Col className="col-md-auto" style={{marginBottom:'50em'}}>
@@ -142,7 +136,6 @@ axios
                             {(value.profile_picture == null)
                               ? <img variant='rounded' width={90} height={90} src={noImage} alt="noImage"/> 
                               : <img variant='rounded' width={90} height={90} src={BASE_URL+value.profile_picture} alt="bengkel"/>}
-                            
                             <Media.Body>
                               <h6 style={{ paddingLeft: 10, fontSize: 16, fontWeight: "bold", color:"#FCCA53"}}>{value.name}</h6>
                               <p style={{ paddingLeft: 10, fontSize: 12}}>{value.address}</p>
@@ -156,7 +149,13 @@ axios
                 );
               })
           ) : (
-            error && <Alert variant="danger">Error bang</Alert>
+            //error && <Alert variant="danger">Error bang</Alert>
+            <Container className="d-flex justify-content-center" style={{width:'30%'}}>
+              <Col className="col-md-auto" style={{marginBottom:'50em'}}>
+                <img src={imageEmpty} alt="empty sparepart"style={{width:"100%",height:"100%"}}></img>
+                <h6 style={{fontWeight:"bold"}}>No bengkels in bengkel lists</h6>
+              </Col>
+            </Container>
           )}
       </Container>
     </div>

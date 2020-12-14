@@ -9,14 +9,13 @@ import {
   Col,
   Alert
 } from "react-bootstrap";
+
 import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 import { POST_BENGKEL } from "constants/urls";
-import image from '../images/bawah.png';
 import '../index.css';
 
 const qs = require("qs");
-
 const Services = () => {
   const [namaBengkel, setNamaBengkel] = React.useState("");
   const [address, setAddress] = React.useState("");
@@ -28,7 +27,6 @@ const Services = () => {
   const [serverError, setServerError] = React.useState(false);
 
   const handleSubmit = (e) => {
-    //var bodyJson = JSON.parse(requestBody);
     e.preventDefault();
     const data = qs.stringify({
       'username': username,
@@ -93,43 +91,34 @@ const Services = () => {
               <Alert show={show} variant="success" onClose={() => setShow(false)} dismissible>
                 Registered Successfully !
               </Alert>
-
               <Alert show={emailError} variant="danger" onClose={() => setEmailError(false)} dismissible>
                 Please input a valid email !
               </Alert>
-
               <Alert show={serverError} variant="danger" onClose={() => setServerError(false)} dismissible>
                 Error. Try again !
               </Alert>
-
               <Form.Label style={{ paddingTop: 10 }} ><h2 style={{ color: '#636363' }}>BE OUR PARTNER</h2></Form.Label>
               <Form.Group style={{ paddingRight: 55 }}>
                 <Form.Label><p style={{ color: '#636363', paddingLeft: 10, fontSize: 14, marginBottom:'-10%' }}>Bengkel Name</p></Form.Label>
                 <Form.Control required type="text" value={namaBengkel} placeholder="Bengkel Name" className="mb-1 mr-sm-1 rounded-pill" style={{ width: '125%' }} onChange={e=>setNamaBengkel(e.target.value)} />
               </Form.Group>
-
               <Form.Group style={{ paddingRight: 55 }}>
                 <Form.Label><p style={{ color: '#636363', paddingLeft: 10, fontSize: 14, marginBottom:'-10%' }}>Address</p></Form.Label>
                 <Form.Control required type="text" value={address} placeholder="Address" className="mb-1 mr-sm-1 rounded-pill" style={{ width: '125%' }} onChange={e=>setAddress(e.target.value)} />
               </Form.Group>
-
               <Form.Group style={{ paddingRight: 55 }}>
                 <Form.Label><p style={{ color: '#636363', paddingLeft: 10, fontSize: 14, marginBottom:'-10%' }}>Email</p></Form.Label>
                 <Form.Control required type="text" value={email} placeholder="Email" className="mb-1 mr-sm-1 rounded-pill" style={{ width: '125%' }} onChange={e=>setEmail(e.target.value)} />
               </Form.Group>
-
               <Form.Group style={{ paddingRight: 55 }}>
                 <Form.Label><p style={{ color: '#636363', paddingLeft: 10, fontSize: 14, marginBottom:'-10%' }}>Username</p></Form.Label>
                 <Form.Control required type="text" value={username} placeholder="Username" className="mb-1 mr-sm-1 rounded-pill" style={{ width: '125%' }} onChange={e=>setUsername(e.target.value)} />
               </Form.Group>
-
               <Form.Group style={{ paddingRight: 55 }}>
                 <Form.Label><p style={{ color: '#636363', paddingLeft: 10, fontSize: 14, marginBottom:'-10%' }}>Password</p></Form.Label>
                 <Form.Control required type="password" value={password} placeholder="Password" className="mb-1 mr-sm-1 rounded-pill" style={{ width: '125%' }} onChange={e=>setPassword(e.target.value)}/>
               </Form.Group>
-
               <Button className="button-custom fa fa-search rounded-pill" type="submit">Sign Up</Button>
-
           </Form>
         </Col>
       </Row>

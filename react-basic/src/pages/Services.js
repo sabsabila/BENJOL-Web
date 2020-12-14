@@ -1,21 +1,16 @@
 import React from "react";
 import {
-  Button,
   Card,
   Container,
   Nav,
   Navbar,
-  Form, FormControl,
-  Jumbotron,
   Row,
   Col,
-  Spinner,
-  Alert,
 } from "react-bootstrap";
+
 import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 import { GET_FILMS } from "constants/urls";
-import image from '../images/bawah.png';
 import cari from '../images/cari.png';
 import motor from '../images/motor.png'
 import list from '../images/list.png'
@@ -39,7 +34,6 @@ const Services = () => {
         setError(true);
         console.warn(err);
       });
-    return () => {};
   }, []);
 
   return (

@@ -1,16 +1,12 @@
 import React from "react";
 import {
-  Button,
   Container,
   Nav,
   Navbar,
-  Form, FormControl,
-  Jumbotron,
   Row,
   Col,
-  Spinner,
-  Alert,
 } from "react-bootstrap";
+
 import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 import { GET_FILMS } from "constants/urls";
@@ -40,9 +36,7 @@ const AboutUs = () => {
         setError(true);
         console.warn(err);
       });
-    return () => {};
   }, []);
-
   return (
     <div className="benjol-bg-sm">
       <Navbar fixed="top" bg="white" variant="light" expand="md" >
@@ -60,6 +54,7 @@ const AboutUs = () => {
           </Navbar.Collapse>
         </Container>
       </Navbar>   
+      
       <Container style={{ paddingTop: 150 }}>
         <Row>
           <Col md={6} style={{paddingRight: 125}}>
