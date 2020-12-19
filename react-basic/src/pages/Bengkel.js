@@ -14,18 +14,17 @@ from "react-bootstrap";
 import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 import { BASE_URL, GET_BENGKEL, POST_SEARCH_BENGKEL } from "constants/urls";
-// import { BASE_URL, GET_SPAREPART , POST_SEARCH_SPAREPART} from "constants/urls";
+
 import noImage from '../images/noImage.png';
 import imageEmpty from '../images/empty.png';
-import logo2 from '../images/horizontal-logo.jpeg';
+
 import logo from '../images/horizontal-primary.png';
 
 const Bengkels = () => {
-// const history = useHistory();
+
 const [loading, setLoading] = React.useState(true);
 const [error, setError] = React.useState(false);
 const [bengkel, setBengkel] = React.useState();
-// const [sparepart, setSparepart] = React.useState();
 const [keyword, setKeyword] = React.useState();
 const [show, setShow] = React.useState(false);
 
@@ -33,7 +32,7 @@ const [show, setShow] = React.useState(false);
 const qs = require("qs");
 
 const handleClick = (e) => {
-    //var bodyJson = JSON.parse(requestBody);
+
     e.preventDefault();
     const data = qs.stringify({
      'name': keyword
@@ -41,7 +40,7 @@ const handleClick = (e) => {
      var config = {
        method: 'post',
        url: POST_SEARCH_BENGKEL,
-      // url: POST_SEARCH_SPAREPART,
+
        headers: { },
        data : data
      };
@@ -54,7 +53,6 @@ const handleClick = (e) => {
           setShow(true);
         }
         setBengkel(response.data.bengkel);
-        // setSparepart(response.data.spareparts);
       })
       .catch(function (error) {
         console.log(error);
@@ -64,7 +62,6 @@ const handleClick = (e) => {
 React.useEffect(() => {
 axios
    .get(GET_BENGKEL,{
-    // .get(GET_SPAREPART,{
     headers:{
       
     }
@@ -73,7 +70,6 @@ axios
     console.log("a");
     setLoading(false);
     setBengkel(response.data.bengkel);
-    // setSparepart(response.data.spareparts);
   })
   .catch((err) => {
     setLoading(false);
