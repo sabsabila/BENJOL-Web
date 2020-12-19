@@ -21,6 +21,7 @@ import twitter from '../images/twitter.png'
 import gmail from '../images/gmail.png'
 import call from '../images/call.png'
 import whatsapp from '../images/whatsapp.png'
+import logo from '../images/horizontal-primary.png';
 
 const AboutUs = () => {
   const history = useHistory();
@@ -48,7 +49,14 @@ const AboutUs = () => {
       <Navbar fixed="top" bg="white" variant="light" expand="md" >
         <Container>
           <Link to="/">
-            <Navbar.Brand className="benjol-brand">BENJOL | <i> Bengkel Jadi Online</i></Navbar.Brand>
+            <Navbar.Brand src={logo} className="benjol-brand">
+              <img
+                alt=""
+                src={logo}
+                width='200'
+                className="d-inline-block align-top"
+              />
+            </Navbar.Brand>
           </Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">

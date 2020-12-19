@@ -14,6 +14,7 @@ import axios from "axios";
 import { POST_BENGKEL } from "constants/urls";
 import image from '../images/bawah.png';
 import '../index.css';
+import logo from '../images/horizontal-primary.png';
 
 const qs = require("qs");
 
@@ -73,7 +74,14 @@ const Services = () => {
       <Navbar fixed="top" bg="white" variant="light" expand="md" >
         <Container>
           <Link to="/">
-            <Navbar.Brand className="benjol-brand">BENJOL | <i> Bengkel Jadi Online</i></Navbar.Brand>
+             <Navbar.Brand src={logo} className="benjol-brand">
+              <img
+                alt=""
+                src={logo}
+                width='200'
+                className="d-inline-block align-top"
+              />
+            </Navbar.Brand>
           </Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">

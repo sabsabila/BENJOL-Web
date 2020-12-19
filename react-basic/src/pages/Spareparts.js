@@ -20,6 +20,7 @@ import axios from "axios";
 import { BASE_URL, GET_SPAREPART , POST_SEARCH_SPAREPART} from "constants/urls";
 import imageEmpty from '../images/empty.png';
 import noImage from '../images/noImage.png';
+import logo from '../images/horizontal-primary.png';
 
 const Spareparts = () => {
   const history = useHistory();
@@ -82,7 +83,14 @@ const Spareparts = () => {
       <Navbar sticky="top" bg="white" variant="light" expand="md" >
         <Container>
           <Link to="/">
-            <Navbar.Brand className="benjol-brand">BENJOL | <i> Bengkel Jadi Online</i></Navbar.Brand>
+             <Navbar.Brand src={logo} className="benjol-brand">
+              <img
+                alt=""
+                src={logo}
+                width='200'
+                className="d-inline-block align-top"
+              />
+            </Navbar.Brand>
           </Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
@@ -174,7 +182,7 @@ const Spareparts = () => {
            <Col className="col-md-auto" style={{marginBottom:'50em'}}>
           <img src={imageEmpty} alt="empty sparepart"style={{width:"100%",height:"100%"}}></img>
           <h6 style={{fontWeight:"bold"}}>No items in sparepart lists</h6>
-         </Col>
+            </Col>
          </Container>
         )}
       </Container>

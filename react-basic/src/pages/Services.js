@@ -20,6 +20,7 @@ import cari from '../images/cari.png';
 import motor from '../images/motor.png'
 import list from '../images/list.png'
 import calendar from '../images/calendar.png'
+import logo from '../images/horizontal-primary.png';
 
 const Services = () => {
   const history = useHistory();
@@ -47,7 +48,14 @@ const Services = () => {
       <Navbar fixed="top" bg="white" variant="light" expand="md" >
         <Container>
           <Link to="/">
-            <Navbar.Brand className="benjol-brand">BENJOL | <i> Bengkel Jadi Online</i></Navbar.Brand>
+            <Navbar.Brand src={logo} className="benjol-brand">
+              <img
+                alt=""
+                src={logo}
+                width='200'
+                className="d-inline-block align-top"
+              />
+            </Navbar.Brand>
           </Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
