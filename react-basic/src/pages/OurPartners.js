@@ -4,15 +4,14 @@ import {
   Container,
   Nav,
   Navbar,
-  Form,
+  Form, InputGroup,
   Row,
   Col,
   Alert
 } from "react-bootstrap";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import { POST_BENGKEL } from "constants/urls";
-import image from '../images/bawah.png';
 import '../index.css';
 import logo from '../images/horizontal-primary.png';
 
@@ -22,7 +21,7 @@ const Services = () => {
   const [namaBengkel, setNamaBengkel] = React.useState("");
   const [address, setAddress] = React.useState("");
   const [email, setEmail] = React.useState("");
-  const [username, setUsername] = React.useState("");
+  const [phone_number, setPhoneNumber] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [show, setShow] = React.useState(false);
   const [emailError, setEmailError] = React.useState(false);
@@ -32,7 +31,7 @@ const Services = () => {
     //var bodyJson = JSON.parse(requestBody);
     e.preventDefault();
     const data = qs.stringify({
-      'username': username,
+     'phone_number': "+62"+phone_number,
      'email': email,
      'password': password,
      'name': namaBengkel,
@@ -54,7 +53,7 @@ const Services = () => {
         setEmail("");
         setNamaBengkel("");
         setAddress("");
-        setUsername("")
+        setPhoneNumber("");
         setPassword("");
       }
      })
@@ -78,7 +77,7 @@ const Services = () => {
               <img
                 alt=""
                 src={logo}
-                width='200'
+                width='180'
                 className="d-inline-block align-top"
               />
             </Navbar.Brand>
@@ -110,7 +109,7 @@ const Services = () => {
                 Error. Try again !
               </Alert>
 
-              <Form.Label style={{ paddingTop: 10 }} ><h2 style={{ color: '#636363' }}>BE OUR PARTNER</h2></Form.Label>
+              <Form.Label style={{ paddingTop: 20 }} ><h2 style={{ color: '#636363' }}>BE OUR PARTNER</h2></Form.Label>
               <Form.Group style={{ paddingRight: 55 }}>
                 <Form.Label><p style={{ color: '#636363', paddingLeft: 10, fontSize: 14, marginBottom:'-10%' }}>Bengkel Name</p></Form.Label>
                 <Form.Control required type="text" value={namaBengkel} placeholder="Bengkel Name" className="mb-1 mr-sm-1 rounded-pill" style={{ width: '125%' }} onChange={e=>setNamaBengkel(e.target.value)} />
@@ -126,9 +125,14 @@ const Services = () => {
                 <Form.Control required type="text" value={email} placeholder="Email" className="mb-1 mr-sm-1 rounded-pill" style={{ width: '125%' }} onChange={e=>setEmail(e.target.value)} />
               </Form.Group>
 
-              <Form.Group style={{ paddingRight: 55 }}>
-                <Form.Label><p style={{ color: '#636363', paddingLeft: 10, fontSize: 14, marginBottom:'-10%' }}>Username</p></Form.Label>
-                <Form.Control required type="text" value={username} placeholder="Username" className="mb-1 mr-sm-1 rounded-pill" style={{ width: '125%' }} onChange={e=>setUsername(e.target.value)} />
+              <Form.Group>
+                <Form.Label><p style={{ color: '#636363', paddingLeft: 10, fontSize: 14, marginBottom:'-10%' }}>Phone Number</p></Form.Label>
+                <InputGroup style={{ width: '102%' }}>
+                  <InputGroup.Prepend>
+                    <InputGroup.Text className="mb-1 mr-sm-1 rounded-pill">+62</InputGroup.Text>
+                  </InputGroup.Prepend>
+                  <Form.Control required type="tel" value={phone_number} placeholder="Phone Number" className="mb-1 mr-sm-1 rounded-pill" onChange={e=>setPhoneNumber(e.target.value)} />               
+                </InputGroup>
               </Form.Group>
 
               <Form.Group style={{ paddingRight: 55 }}>
@@ -136,7 +140,7 @@ const Services = () => {
                 <Form.Control required type="password" value={password} placeholder="Password" className="mb-1 mr-sm-1 rounded-pill" style={{ width: '125%' }} onChange={e=>setPassword(e.target.value)}/>
               </Form.Group>
 
-              <Button className="button-custom fa fa-search rounded-pill" type="submit">Sign Up</Button>
+              <Button className="button-custom rounded-pill" type="submit">Sign Up</Button>
 
           </Form>
         </Col>
