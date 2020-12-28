@@ -14,29 +14,13 @@ import {
   Container,
   Nav,
   Navbar,
-  Jumbotron,
   Row,
   Col,
-  Spinner,
-  Alert,
-  Card,
 } from "react-bootstrap";
-import { Link, useHistory } from "react-router-dom";
-import { logout } from "utils/auth";
-import axios from "axios";
-import { GET_FILMS } from "constants/urls";
+import { Link } from "react-router-dom";
 import logo from '../images/horizontal-primary.png';
 
 const Dashboard = () => {
-  const history = useHistory();
-  const [loading, setLoading] = React.useState(true);
-  const [error, setError] = React.useState(false);
-
-  const _onLogout = () => {
-    logout();
-    history.replace("/");
-  };
-
   return (
     <div className="benjol-bg">
       <Navbar fixed="top" bg="white" variant="light" expand="md" >
@@ -46,7 +30,7 @@ const Dashboard = () => {
               <img
                 alt=""
                 src={logo}
-                width='200'
+                width='180'
                 className="d-inline-block align-top"
               />
             </Navbar.Brand>
