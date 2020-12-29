@@ -1,19 +1,12 @@
 import React from "react";
 import {
-  Button,
   Container,
   Nav,
   Navbar,
-  Form, FormControl,
-  Jumbotron,
   Row,
   Col,
-  Spinner,
-  Alert,
 } from "react-bootstrap";
-import { Link, useHistory } from "react-router-dom";
-import axios from "axios";
-import { GET_FILMS } from "constants/urls";
+import { Link } from "react-router-dom";
 import Media from 'react-bootstrap/Media';
 import facebook from '../images/facebook.png';
 import instagram from '../images/instagram.png'
@@ -24,26 +17,6 @@ import whatsapp from '../images/whatsapp.png'
 import logo from '../images/horizontal-primary.png';
 
 const AboutUs = () => {
-  const history = useHistory();
-  const [loading, setLoading] = React.useState(true);
-  const [error, setError] = React.useState(false);
-  const [film, setFilm] = React.useState();
-
-  React.useEffect(() => {
-    axios
-      .get(GET_FILMS)
-      .then((res) => {
-        setLoading(false);
-        setFilm(res.data);
-      })
-      .catch((err) => {
-        setLoading(false);
-        setError(true);
-        console.warn(err);
-      });
-    return () => {};
-  }, []);
-
   return (
     <div className="benjol-bg-sm">
       <Navbar fixed="top" bg="white" variant="light" expand="md" >
@@ -53,7 +26,7 @@ const AboutUs = () => {
               <img
                 alt=""
                 src={logo}
-                width='200'
+                width='180'
                 className="d-inline-block align-top"
               />
             </Navbar.Brand>
@@ -86,6 +59,7 @@ const AboutUs = () => {
             </h3>
             <Media>
               <img
+                alt="logo-facebook"
                 width={20}
                 height={20}
                 src={facebook}
@@ -94,6 +68,7 @@ const AboutUs = () => {
                 <p style={{ paddingLeft: 10}}>Benjol</p>
               </Media.Body>
               <img
+                alt="logo-twitter"
                 width={20}
                 height={20}
                 src={twitter}
@@ -104,6 +79,7 @@ const AboutUs = () => {
             </Media>
             <Media>
               <img
+                alt="logo-instagram"
                 width={20}
                 height={20}
                 src={instagram}
@@ -112,6 +88,7 @@ const AboutUs = () => {
                 <p style={{ paddingLeft: 10}}>Benjol_id</p>
               </Media.Body>
               <img
+                alt="logo-gmail"
                 width={20}
                 height={20}
                 src={gmail}
@@ -122,6 +99,7 @@ const AboutUs = () => {
             </Media>
             <Media>
               <img
+                alt="logo-whatsapp"
                 width={20}
                 height={20}
                 src={whatsapp}
@@ -130,6 +108,7 @@ const AboutUs = () => {
                 <p style={{ paddingLeft: 10}}>082145492740</p>
               </Media.Body>
               <img
+                alt="logo-call"
                 width={20}
                 height={20}
                 src={call}

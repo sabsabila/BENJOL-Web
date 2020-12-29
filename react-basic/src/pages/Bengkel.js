@@ -11,7 +11,7 @@ import {
 } 
 
 from "react-bootstrap";
-import { Link, useHistory } from "react-router-dom";
+import { Link} from "react-router-dom";
 import axios from "axios";
 import { BASE_URL, GET_BENGKEL, POST_SEARCH_BENGKEL } from "constants/urls";
 
@@ -89,7 +89,7 @@ axios
               <img
                 alt=""
                 src={logo}
-                width='200'
+                width='180'
                 className="d-inline-block align-top"
               />
             </Navbar.Brand>
@@ -170,13 +170,11 @@ axios
                             </div>
                             <div className="d-flex justify-content-between align-items-center">
                               <small className="text-muted">
-                                phone. {value.phone_number}
+                                {value.phone_number}
                               </small>
                             </div>
-                            
                             </Card.Body>
                           </Card>
-                          {value.phone_number}
                         </Col>
                       );
                 

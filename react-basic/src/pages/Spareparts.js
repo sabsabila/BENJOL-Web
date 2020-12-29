@@ -4,8 +4,7 @@ import {
   Container,
   Nav,
   Navbar,
-  Form, FormControl,
-  Jumbotron,
+  Form, 
   Row,
   Col,
   Spinner,
@@ -15,7 +14,7 @@ import {
 } 
 
 from "react-bootstrap";
-import { Link, useHistory } from "react-router-dom";
+import { Link } from "react-router-dom";
 import axios from "axios";
 import { BASE_URL, GET_SPAREPART , POST_SEARCH_SPAREPART} from "constants/urls";
 import imageEmpty from '../images/empty.png';
@@ -23,17 +22,13 @@ import noImage from '../images/noImage.png';
 import logo from '../images/horizontal-primary.png';
 
 const Spareparts = () => {
-  const history = useHistory();
   const [loading, setLoading] = React.useState(true);
-  const [error, setError] = React.useState(false);
+  const [, setError] = React.useState(false);
   const [sparepart, setSparepart] = React.useState();
   const [keyword, setKeyword] = React.useState();
   const [show, setShow] = React.useState(false);
-
   const qs = require("qs");
-
   const handleClick = (e) => {
-    //var bodyJson = JSON.parse(requestBody);
     e.preventDefault();
     const data = qs.stringify({
      'name': keyword
@@ -87,7 +82,7 @@ const Spareparts = () => {
               <img
                 alt=""
                 src={logo}
-                width='200'
+                width='180'
                 className="d-inline-block align-top"
               />
             </Navbar.Brand>
@@ -147,8 +142,8 @@ const Spareparts = () => {
                           <Card className="mb-2 box-shadow">
                             <Card.Body>
                             {(value.picture == null)
-                            ? <Card.Img top width="100%" width={100} height={100} src={noImage} alt="sparepart"  /> 
-                            : <Card.Img top width="100%" width={100} height={100} src={BASE_URL+value.picture} alt="sparepart"/>}
+                            ? <Card.Img top width={100} height={100} src={noImage} alt="sparepart"  /> 
+                            : <Card.Img top width={100} height={100} src={BASE_URL+value.picture} alt="sparepart"/>}
                             <Card.Text style={{color:"#FCCA53", fontWeight: "bold"}}>{value.name}</Card.Text>
                             <div className="d-flex justify-content-between align-items-center">
                               <small style={{fontWeight: "bold"}}>
