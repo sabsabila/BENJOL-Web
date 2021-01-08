@@ -6,10 +6,14 @@ import {
   Row,
   Col,
 } from "react-bootstrap";
+<<<<<<< HEAD
 
 import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 import { GET_FILMS } from "constants/urls";
+=======
+import { Link } from "react-router-dom";
+>>>>>>> a9bf2f07275ddd66d14d139ccfa5f403036c3d2f
 import Media from 'react-bootstrap/Media';
 import facebook from '../images/facebook.png';
 import instagram from '../images/instagram.png'
@@ -17,8 +21,10 @@ import twitter from '../images/twitter.png'
 import gmail from '../images/gmail.png'
 import call from '../images/call.png'
 import whatsapp from '../images/whatsapp.png'
+import logo from '../images/horizontal-primary.png';
 
 const AboutUs = () => {
+<<<<<<< HEAD
   const history = useHistory();
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState(false);
@@ -37,12 +43,21 @@ const AboutUs = () => {
         console.warn(err);
       });
   }, []);
+=======
+>>>>>>> a9bf2f07275ddd66d14d139ccfa5f403036c3d2f
   return (
     <div className="benjol-bg-sm">
       <Navbar fixed="top" bg="white" variant="light" expand="md" >
         <Container>
           <Link to="/">
-            <Navbar.Brand className="benjol-brand">BENJOL | <i> Bengkel Jadi Online</i></Navbar.Brand>
+            <Navbar.Brand src={logo} className="benjol-brand">
+              <img
+                alt=""
+                src={logo}
+                width='180'
+                className="d-inline-block align-top"
+              />
+            </Navbar.Brand>
           </Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
@@ -73,6 +88,7 @@ const AboutUs = () => {
             </h3>
             <Media>
               <img
+                alt="logo-facebook"
                 width={20}
                 height={20}
                 src={facebook}
@@ -81,6 +97,7 @@ const AboutUs = () => {
                 <p style={{ paddingLeft: 10}}>Benjol</p>
               </Media.Body>
               <img
+                alt="logo-twitter"
                 width={20}
                 height={20}
                 src={twitter}
@@ -91,6 +108,7 @@ const AboutUs = () => {
             </Media>
             <Media>
               <img
+                alt="logo-instagram"
                 width={20}
                 height={20}
                 src={instagram}
@@ -99,6 +117,7 @@ const AboutUs = () => {
                 <p style={{ paddingLeft: 10}}>Benjol_id</p>
               </Media.Body>
               <img
+                alt="logo-gmail"
                 width={20}
                 height={20}
                 src={gmail}
@@ -109,6 +128,7 @@ const AboutUs = () => {
             </Media>
             <Media>
               <img
+                alt="logo-whatsapp"
                 width={20}
                 height={20}
                 src={whatsapp}
@@ -117,6 +137,7 @@ const AboutUs = () => {
                 <p style={{ paddingLeft: 10}}>082145492740</p>
               </Media.Body>
               <img
+                alt="logo-call"
                 width={20}
                 height={20}
                 src={call}

@@ -7,16 +7,22 @@ import {
   Row,
   Col,
 } from "react-bootstrap";
+<<<<<<< HEAD
 
 import { Link, useHistory } from "react-router-dom";
 import axios from "axios";
 import { GET_FILMS } from "constants/urls";
+=======
+import { Link } from "react-router-dom";
+>>>>>>> a9bf2f07275ddd66d14d139ccfa5f403036c3d2f
 import cari from '../images/cari.png';
 import motor from '../images/motor.png'
 import list from '../images/list.png'
 import calendar from '../images/calendar.png'
+import logo from '../images/horizontal-primary.png';
 
 const Services = () => {
+<<<<<<< HEAD
   const history = useHistory();
   const [loading, setLoading] = React.useState(true);
   const [error, setError] = React.useState(false);
@@ -36,12 +42,21 @@ const Services = () => {
       });
   }, []);
 
+=======
+>>>>>>> a9bf2f07275ddd66d14d139ccfa5f403036c3d2f
   return (
     <div className="benjol-bg-sm">
       <Navbar fixed="top" bg="white" variant="light" expand="md" >
         <Container>
           <Link to="/">
-            <Navbar.Brand className="benjol-brand">BENJOL | <i> Bengkel Jadi Online</i></Navbar.Brand>
+            <Navbar.Brand src={logo} className="benjol-brand">
+              <img
+                alt=""
+                src={logo}
+                width='180'
+                className="d-inline-block align-top"
+              />
+            </Navbar.Brand>
           </Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
@@ -71,7 +86,7 @@ const Services = () => {
               <Card.Img src={motor} />
               <Card.Body>
                 <Card.Text style={{textAlign:"center" ,top: "10%", fontSize: 14}}>
-                  Antar Jemput Motor
+                  Antar Jemput Motorr
                 </Card.Text>
               </Card.Body>
             </Card>

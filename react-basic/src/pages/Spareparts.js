@@ -12,20 +12,26 @@ import {
   Card,
 } from "react-bootstrap";
 
+<<<<<<< HEAD
 import { Link, useHistory } from "react-router-dom";
+=======
+} 
+
+from "react-bootstrap";
+import { Link } from "react-router-dom";
+>>>>>>> a9bf2f07275ddd66d14d139ccfa5f403036c3d2f
 import axios from "axios";
 import { BASE_URL, GET_SPAREPART , POST_SEARCH_SPAREPART} from "constants/urls";
 import imageEmpty from '../images/empty.png';
 import noImage from '../images/noImage.png';
+import logo from '../images/horizontal-primary.png';
 
 const Spareparts = () => {
-  const history = useHistory();
   const [loading, setLoading] = React.useState(true);
-  const [error, setError] = React.useState(false);
+  const [, setError] = React.useState(false);
   const [sparepart, setSparepart] = React.useState();
   const [keyword, setKeyword] = React.useState();
   const [show, setShow] = React.useState(false);
-
   const qs = require("qs");
   const handleClick = (e) => {
     e.preventDefault();
@@ -76,7 +82,14 @@ const Spareparts = () => {
       <Navbar sticky="top" bg="white" variant="light" expand="md" >
         <Container>
           <Link to="/">
-            <Navbar.Brand className="benjol-brand">BENJOL | <i> Bengkel Jadi Online</i></Navbar.Brand>
+             <Navbar.Brand src={logo} className="benjol-brand">
+              <img
+                alt=""
+                src={logo}
+                width='180'
+                className="d-inline-block align-top"
+              />
+            </Navbar.Brand>
           </Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
@@ -132,8 +145,8 @@ const Spareparts = () => {
                           <Card className="mb-2 box-shadow">
                             <Card.Body>
                             {(value.picture == null)
-                            ? <Card.Img top width="100%" width={100} height={100} src={noImage} alt="sparepart"  /> 
-                            : <Card.Img top width="100%" width={100} height={100} src={BASE_URL+value.picture} alt="sparepart"/>}
+                            ? <Card.Img top width={100} height={100} src={noImage} alt="sparepart"  /> 
+                            : <Card.Img top width={100} height={100} src={BASE_URL+value.picture} alt="sparepart"/>}
                             <Card.Text style={{color:"#FCCA53", fontWeight: "bold"}}>{value.name}</Card.Text>
                             <div className="d-flex justify-content-between align-items-center">
                               <small style={{fontWeight: "bold"}}>
@@ -164,7 +177,7 @@ const Spareparts = () => {
            <Col className="col-md-auto" style={{marginBottom:'50em'}}>
           <img src={imageEmpty} alt="empty sparepart"style={{width:"100%",height:"100%"}}></img>
           <h6 style={{fontWeight:"bold"}}>No items in sparepart lists</h6>
-         </Col>
+            </Col>
          </Container>
         )}
       </Container>

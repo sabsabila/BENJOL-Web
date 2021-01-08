@@ -4,23 +4,28 @@ import {
   Container,
   Nav,
   Navbar,
-  Form,
+  Form, InputGroup,
   Row,
   Col,
   Alert
 } from "react-bootstrap";
+<<<<<<< HEAD
 
 import { Link, useHistory } from "react-router-dom";
+=======
+import { Link } from "react-router-dom";
+>>>>>>> a9bf2f07275ddd66d14d139ccfa5f403036c3d2f
 import axios from "axios";
 import { POST_BENGKEL } from "constants/urls";
 import '../index.css';
+import logo from '../images/horizontal-primary.png';
 
 const qs = require("qs");
 const Services = () => {
   const [namaBengkel, setNamaBengkel] = React.useState("");
   const [address, setAddress] = React.useState("");
   const [email, setEmail] = React.useState("");
-  const [username, setUsername] = React.useState("");
+  const [phone_number, setPhoneNumber] = React.useState("");
   const [password, setPassword] = React.useState("");
   const [show, setShow] = React.useState(false);
   const [emailError, setEmailError] = React.useState(false);
@@ -29,7 +34,7 @@ const Services = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const data = qs.stringify({
-      'username': username,
+     'phone_number': "+62"+phone_number,
      'email': email,
      'password': password,
      'name': namaBengkel,
@@ -51,7 +56,7 @@ const Services = () => {
         setEmail("");
         setNamaBengkel("");
         setAddress("");
-        setUsername("")
+        setPhoneNumber("");
         setPassword("");
       }
      })
@@ -71,7 +76,14 @@ const Services = () => {
       <Navbar fixed="top" bg="white" variant="light" expand="md" >
         <Container>
           <Link to="/">
-            <Navbar.Brand className="benjol-brand">BENJOL | <i> Bengkel Jadi Online</i></Navbar.Brand>
+             <Navbar.Brand src={logo} className="benjol-brand">
+              <img
+                alt=""
+                src={logo}
+                width='180'
+                className="d-inline-block align-top"
+              />
+            </Navbar.Brand>
           </Link>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
@@ -97,7 +109,12 @@ const Services = () => {
               <Alert show={serverError} variant="danger" onClose={() => setServerError(false)} dismissible>
                 Error. Try again !
               </Alert>
+<<<<<<< HEAD
               <Form.Label style={{ paddingTop: 10 }} ><h2 style={{ color: '#636363' }}>BE OUR PARTNER</h2></Form.Label>
+=======
+
+              <Form.Label style={{ paddingTop: 20 }} ><h2 style={{ color: '#636363' }}>BE OUR PARTNER</h2></Form.Label>
+>>>>>>> a9bf2f07275ddd66d14d139ccfa5f403036c3d2f
               <Form.Group style={{ paddingRight: 55 }}>
                 <Form.Label><p style={{ color: '#636363', paddingLeft: 10, fontSize: 14, marginBottom:'-10%' }}>Bengkel Name</p></Form.Label>
                 <Form.Control required type="text" value={namaBengkel} placeholder="Bengkel Name" className="mb-1 mr-sm-1 rounded-pill" style={{ width: '125%' }} onChange={e=>setNamaBengkel(e.target.value)} />
@@ -110,15 +127,33 @@ const Services = () => {
                 <Form.Label><p style={{ color: '#636363', paddingLeft: 10, fontSize: 14, marginBottom:'-10%' }}>Email</p></Form.Label>
                 <Form.Control required type="text" value={email} placeholder="Email" className="mb-1 mr-sm-1 rounded-pill" style={{ width: '125%' }} onChange={e=>setEmail(e.target.value)} />
               </Form.Group>
+<<<<<<< HEAD
               <Form.Group style={{ paddingRight: 55 }}>
                 <Form.Label><p style={{ color: '#636363', paddingLeft: 10, fontSize: 14, marginBottom:'-10%' }}>Username</p></Form.Label>
                 <Form.Control required type="text" value={username} placeholder="Username" className="mb-1 mr-sm-1 rounded-pill" style={{ width: '125%' }} onChange={e=>setUsername(e.target.value)} />
+=======
+
+              <Form.Group>
+                <Form.Label><p style={{ color: '#636363', paddingLeft: 10, fontSize: 14, marginBottom:'-10%' }}>Phone Number</p></Form.Label>
+                <InputGroup style={{ width: '102%' }}>
+                  <InputGroup.Prepend>
+                    <InputGroup.Text className="mb-1 mr-sm-1 rounded-pill">+62</InputGroup.Text>
+                  </InputGroup.Prepend>
+                  <Form.Control required type="tel" value={phone_number} placeholder="Phone Number" className="mb-1 mr-sm-1 rounded-pill" onChange={e=>setPhoneNumber(e.target.value)} />               
+                </InputGroup>
+>>>>>>> a9bf2f07275ddd66d14d139ccfa5f403036c3d2f
               </Form.Group>
               <Form.Group style={{ paddingRight: 55 }}>
                 <Form.Label><p style={{ color: '#636363', paddingLeft: 10, fontSize: 14, marginBottom:'-10%' }}>Password</p></Form.Label>
                 <Form.Control required type="password" value={password} placeholder="Password" className="mb-1 mr-sm-1 rounded-pill" style={{ width: '125%' }} onChange={e=>setPassword(e.target.value)}/>
               </Form.Group>
+<<<<<<< HEAD
               <Button className="button-custom fa fa-search rounded-pill" type="submit">Sign Up</Button>
+=======
+
+              <Button className="button-custom rounded-pill" type="submit">Sign Up</Button>
+
+>>>>>>> a9bf2f07275ddd66d14d139ccfa5f403036c3d2f
           </Form>
         </Col>
       </Row>
