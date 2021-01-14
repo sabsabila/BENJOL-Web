@@ -167,7 +167,7 @@ axios
                             </div>
                             <div className="d-flex justify-content-between align-items-center">
                               <small className="text-muted">
-                                {value.phone_number}
+                                +{value.phone_number}
                               </small>
                             </div>
                             </Card.Body>
