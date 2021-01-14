@@ -57,7 +57,7 @@ const Services = () => {
               <Card.Img src={motor} />
               <Card.Body>
                 <Card.Text style={{textAlign:"center" ,top: "10%", fontSize: 14}}>
-                  Antar Jemput Motorr
+                  Antar Jemput Motor
                 </Card.Text>
               </Card.Body>
             </Card>

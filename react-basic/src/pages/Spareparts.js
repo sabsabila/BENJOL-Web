@@ -10,10 +10,7 @@ import {
   Spinner,
   Alert,
   Card,
-
-} 
-
-from "react-bootstrap";
+} from "react-bootstrap";
 import { Link } from "react-router-dom";
 import axios from "axios";
 import { BASE_URL, GET_SPAREPART , POST_SEARCH_SPAREPART} from "constants/urls";
@@ -52,7 +49,7 @@ const Spareparts = () => {
         console.log(error);
       });
   }
-
+  
     React.useEffect(() => {
     axios
       .get(GET_SPAREPART,{
@@ -69,7 +66,6 @@ const Spareparts = () => {
         setError(true);
         console.warn(err);
       });
-    return () => {};
   }, []);
 
   return (
@@ -111,7 +107,7 @@ const Spareparts = () => {
          </Container>
       </Alert>
      
-      <Container style={{maxHeight: "25rem", overflowX: "auto",  overflowY: "auto", position :"relative"}}>
+      <Container style={{maxHeight: "35rem", overflowX: "auto",  overflowY: "auto", position :"relative"}}>
         <br />
        {loading ? (
           <Row>
@@ -133,7 +129,6 @@ const Spareparts = () => {
               return accumulator;
             }, [])
             .map((p) => {
-              
               return (
                 <Row className="mb-4">
                   {p.map((value) => {
@@ -160,16 +155,13 @@ const Spareparts = () => {
                                 Rp. {value.price}
                               </small>
                             </div>
-                            
                             </Card.Body>
                           </Card>
                         </Col>
                       );
-                
                   })}
                 </Row>
-              );
-               
+              ); 
             })
         ) : (
           // error && <Alert variant="danger">Error bang</Alert>

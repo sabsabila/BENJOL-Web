@@ -63,7 +63,6 @@ React.useEffect(() => {
 axios
    .get(GET_BENGKEL,{
     headers:{
-      
     }
   })
   .then(function (response) {
@@ -76,8 +75,6 @@ axios
     setError(true);
     console.warn(err);
   });
-
-  return () => {};
 }, []);
 
   return (
@@ -183,7 +180,7 @@ axios
               );
               })
           ) : (
-            error && <Alert variant="danger">Error ba</Alert>
+            error && <Alert variant="danger">Error bang</Alert>
           )}
       </Container>
     </div>
