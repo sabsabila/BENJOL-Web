@@ -138,7 +138,7 @@ const Spareparts = () => {
                             <Card.Body>
                             {(value.picture == null)
                             ? <Card.Img top width={100} height={100} src={noImage} alt="sparepart"  /> 
-                            : <Card.Img top width={100} height={100} src={BASE_URL+value.picture} alt="sparepart"/>}
+                            : <Card.Img top width={100} height={100} src={BASE_URL+"/"+value.picture} alt="sparepart"/>}
                             <Card.Text style={{color:"#FCCA53", fontWeight: "bold"}}>{value.name}</Card.Text>
                             <div className="d-flex justify-content-between align-items-center">
                               <small style={{fontWeight: "bold"}}>
