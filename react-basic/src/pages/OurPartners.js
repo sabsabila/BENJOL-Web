@@ -29,7 +29,7 @@ const Services = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     const data = qs.stringify({
-     'phone_number': "+62"+phone_number,
+     'phone_number': "62"+phone_number,
      'email': email,
      'password': password,
      'name': namaBengkel,
