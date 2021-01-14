@@ -11,15 +11,7 @@ import {
   Alert,
   Card,
 } from "react-bootstrap";
-
-<<<<<<< HEAD
-import { Link, useHistory } from "react-router-dom";
-=======
-} 
-
-from "react-bootstrap";
 import { Link } from "react-router-dom";
->>>>>>> a9bf2f07275ddd66d14d139ccfa5f403036c3d2f
 import axios from "axios";
 import { BASE_URL, GET_SPAREPART , POST_SEARCH_SPAREPART} from "constants/urls";
 import imageEmpty from '../images/empty.png';

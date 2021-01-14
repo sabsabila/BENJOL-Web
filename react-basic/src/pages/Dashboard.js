@@ -7,44 +7,12 @@ import {
   Row,
   Col,
 } from "react-bootstrap";
-<<<<<<< HEAD
-
-import { Link, useHistory } from "react-router-dom";
-import { logout } from "utils/auth";
-import axios from "axios";
-import { GET_FILMS } from "constants/urls";
-
-const Dashboard = () => {
-  const history = useHistory();
-  const [loading, setLoading] = React.useState(true);
-  const [error, setError] = React.useState(false);
-  const [film, setFilm] = React.useState();
-
-  React.useEffect(() => {
-    axios
-      .get(GET_FILMS)
-      .then((res) => {
-        setLoading(false);
-        setFilm(res.data);
-      })
-      .catch((err) => {
-        setLoading(false);
-        setError(true);
-        console.warn(err);
-      });
-  }, []);
-
-  const _onLogout = () => {
-    logout();
-    history.replace("/");
-  };
-
-=======
 import { Link } from "react-router-dom";
 import logo from '../images/horizontal-primary.png';
+import monitor from '../images/monitor.png';
+import GooglePlay from '../images/googlePlay.png';
 
 const Dashboard = () => {
->>>>>>> a9bf2f07275ddd66d14d139ccfa5f403036c3d2f
   return (
     <div className="benjol-bg">
       <Navbar fixed="top" bg="white" variant="light" expand="md" >
@@ -79,6 +47,22 @@ const Dashboard = () => {
             <p className="font-italic">dan mencari sparepart yang anda butuhkan.</p>
             <Link to="/spareparts">
             <Button variant="light" size="sm" className="mb-2 btn-sm font-weight-bold shadow p-3 mb-5 bg-white rounded-pill" style={{color:"#FCCA53", backgroundColor:"white", borderColor:"white"}}>Cari Sparepart</Button>
+            </Link>
+          </Col>
+          <Col>
+            <Link>
+              <Button variant="light" size="sm" className="mb-3 btn-sm font-weight-bold shadow p-2 bg-black" style={{ height:"70px", width:"200px", color:"white", backgroundColor:"black", borderColor:"white"}}>
+                <img width="40" height="40" src={monitor}></img>
+                <a style={{fontSize : 12 }}>DONWLOAD FOR Desktop</a>
+              </Button>
+            </Link>
+          </Col>
+          <Col>
+            <Link>
+              <Button variant="light" size="sm" className="mb-3 btn-sm font-weight-bold shadow p-2 bg-black" style={{ height:"70px", width:"200px", color:"white", backgroundColor:"black", borderColor:"white"}}>
+                <img width="40" height="40" src={GooglePlay}></img>
+                <a style={{fontSize : 15 }}>GET IT ON Google Play</a>
+              </Button>
             </Link>
           </Col>
         </Row>      

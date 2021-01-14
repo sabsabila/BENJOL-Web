@@ -6,20 +6,12 @@ import {
   Navbar,
   Form,
   Row,
-<<<<<<< HEAD
-  Col, Spinner,
-  Media, Alert
-} from "react-bootstrap";
-
-import { Link, useHistory } from "react-router-dom";
-=======
   Col, Spinner,Card,
   Image, Alert
 } 
 
 from "react-bootstrap";
 import { Link} from "react-router-dom";
->>>>>>> a9bf2f07275ddd66d14d139ccfa5f403036c3d2f
 import axios from "axios";
 import { BASE_URL, GET_BENGKEL, POST_SEARCH_BENGKEL } from "constants/urls";
 
@@ -38,13 +30,9 @@ const [show, setShow] = React.useState(false);
 
 
 const qs = require("qs");
-<<<<<<< HEAD
-  const handleClick = (e) => {
-=======
 
 const handleClick = (e) => {
 
->>>>>>> a9bf2f07275ddd66d14d139ccfa5f403036c3d2f
     e.preventDefault();
     const data = qs.stringify({
      'name': keyword
@@ -128,12 +116,7 @@ axios
           
         </div>
 
-<<<<<<< HEAD
-      <Container style={{maxHeight: "30rem", overflowX: "auto",  overflowY: "auto", position :"relative"}}>
-        <Alert show={show} onClose={() => setShow(false)} dismissible>
-=======
       <Alert show={show} onClose={() => setShow(false)} dismissible>
->>>>>>> a9bf2f07275ddd66d14d139ccfa5f403036c3d2f
           <Container className="d-flex justify-content-center" style={{width:'30%'}}>
             <Col className="col-md-auto" style={{marginBottom:'50em'}}>
             <Image src={imageEmpty} alt="empty sparepart"style={{width:"100%",height:"100%"}}></Image>
@@ -174,17 +157,6 @@ axios
                             <Card.Body>
                              
                             {(value.profile_picture == null)
-<<<<<<< HEAD
-                              ? <img variant='rounded' width={90} height={90} src={noImage} alt="noImage"/> 
-                              : <img variant='rounded' width={90} height={90} src={BASE_URL+value.profile_picture} alt="bengkel"/>}
-                            <Media.Body>
-                              <h6 style={{ paddingLeft: 10, fontSize: 16, fontWeight: "bold", color:"#FCCA53"}}>{value.name}</h6>
-                              <p style={{ paddingLeft: 10, fontSize: 12}}>{value.address}</p>
-                              <p className="text-muted" style={{ paddingLeft: 10, fontSize: 12}}>{value.phone_number}</p>
-                            </Media.Body>
-                          </Media>
-                      </Col>
-=======
                             ? <Card.Img top width="100%"  height={100} src={noImage} alt="bengkel"  /> 
                             : <Card.Img top width="100%"  height={100} src={BASE_URL+value.profile_picture} alt="bengkel"/>}
                             <Card.Text style={{color:"#FCCA53", fontWeight: "bold"}}>{value.name}</Card.Text>
@@ -201,7 +173,6 @@ axios
                             </Card.Body>
                           </Card>
                         </Col>
->>>>>>> a9bf2f07275ddd66d14d139ccfa5f403036c3d2f
                       );
                 
                   })}
@@ -209,17 +180,7 @@ axios
               );
               })
           ) : (
-<<<<<<< HEAD
-            //error && <Alert variant="danger">Error bang</Alert>
-            <Container className="d-flex justify-content-center" style={{width:'30%'}}>
-              <Col className="col-md-auto" style={{marginBottom:'50em'}}>
-                <img src={imageEmpty} alt="empty sparepart"style={{width:"100%",height:"100%"}}></img>
-                <h6 style={{fontWeight:"bold"}}>No bengkels in bengkel lists</h6>
-              </Col>
-            </Container>
-=======
-            error && <Alert variant="danger">Error ba</Alert>
->>>>>>> a9bf2f07275ddd66d14d139ccfa5f403036c3d2f
+            error && <Alert variant="danger">Error bang</Alert>
           )}
       </Container>
     </div>
