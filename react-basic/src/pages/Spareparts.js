@@ -69,7 +69,7 @@ const Spareparts = () => {
   }, []);
 
   return (
-    <div className="benjol-bg-sm">
+    <div className="benjol-bg-sm" style={{'overflow-y': 'auto'}}>
       
       <Navbar sticky="top" bg="white" variant="light" expand="md" >
         <Container>
@@ -107,7 +107,7 @@ const Spareparts = () => {
          </Container>
       </Alert>
      
-      <Container style={{maxHeight: "35rem", overflowX: "auto",  overflowY: "auto", position :"relative"}}>
+      <Container>
         <br />
        {loading ? (
           <Row>
@@ -133,8 +133,8 @@ const Spareparts = () => {
                 <Row className="mb-4">
                   {p.map((value) => {
                        return (
-                        <Col md="2">
-                          <Card className="mb-2 box-shadow">
+                        <Col md="2" style={{display: 'flex', flexDirection: 'row'}}>
+                          <Card className="mb-2 box-shadow" style={{flex: 1}}>
                             <Card.Body>
                             {(value.picture == null)
                             ? <Card.Img top width={100} height={100} src={noImage} alt="sparepart"  /> 
