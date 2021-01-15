@@ -11,7 +11,7 @@ import {
 } 
 
 from "react-bootstrap";
-import { Link, useHistory } from "react-router-dom";
+import { Link} from "react-router-dom";
 import axios from "axios";
 import { BASE_URL, GET_BENGKEL, POST_SEARCH_BENGKEL } from "constants/urls";
 
@@ -63,7 +63,6 @@ React.useEffect(() => {
 axios
    .get(GET_BENGKEL,{
     headers:{
-      
     }
   })
   .then(function (response) {
@@ -76,8 +75,6 @@ axios
     setError(true);
     console.warn(err);
   });
-
-  return () => {};
 }, []);
 
   return (
@@ -89,7 +86,7 @@ axios
               <img
                 alt=""
                 src={logo}
-                width='200'
+                width='180'
                 className="d-inline-block align-top"
               />
             </Navbar.Brand>
@@ -161,7 +158,7 @@ axios
                              
                             {(value.profile_picture == null)
                             ? <Card.Img top width="100%"  height={100} src={noImage} alt="bengkel"  /> 
-                            : <Card.Img top width="100%"  height={100} src={BASE_URL+value.profile_picture} alt="bengkel"/>}
+                            : <Card.Img top width="100%"  height={100} src={BASE_URL+"/"+value.profile_picture} alt="bengkel"/>}
                             <Card.Text style={{color:"#FCCA53", fontWeight: "bold"}}>{value.name}</Card.Text>
                             <div className="d-flex justify-content-between align-items-center">
                               <small style={{fontWeight: "bold"}}>
@@ -170,13 +167,11 @@ axios
                             </div>
                             <div className="d-flex justify-content-between align-items-center">
                               <small className="text-muted">
-                                phone. {value.phone_number}
+                                +{value.phone_number}
                               </small>
                             </div>
-                            
                             </Card.Body>
                           </Card>
-                          {value.phone_number}
                         </Col>
                       );
                 
@@ -185,7 +180,7 @@ axios
               );
               })
           ) : (
-            error && <Alert variant="danger">Error ba</Alert>
+            error && <Alert variant="danger">Error bang</Alert>
           )}
       </Container>
     </div>

@@ -1,21 +1,13 @@
 import React from "react";
 import {
-  Button,
   Card,
   Container,
   Nav,
   Navbar,
-  Form, FormControl,
-  Jumbotron,
   Row,
   Col,
-  Spinner,
-  Alert,
 } from "react-bootstrap";
-import { Link, useHistory } from "react-router-dom";
-import axios from "axios";
-import { GET_FILMS } from "constants/urls";
-import image from '../images/bawah.png';
+import { Link } from "react-router-dom";
 import cari from '../images/cari.png';
 import motor from '../images/motor.png'
 import list from '../images/list.png'
@@ -23,10 +15,6 @@ import calendar from '../images/calendar.png'
 import logo from '../images/horizontal-primary.png';
 
 const Services = () => {
-  const history = useHistory();
-  const [loading, setLoading] = React.useState(true);
-  const [error, setError] = React.useState(false);
-
   return (
     <div className="benjol-bg-sm">
       <Navbar fixed="top" bg="white" variant="light" expand="md" >
@@ -36,7 +24,7 @@ const Services = () => {
               <img
                 alt=""
                 src={logo}
-                width='200'
+                width='180'
                 className="d-inline-block align-top"
               />
             </Navbar.Brand>

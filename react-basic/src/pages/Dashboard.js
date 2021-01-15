@@ -1,42 +1,18 @@
-/*
-  Ini halaman dashboard, sebenernya gak sehat cara setstate kayak gini, harusnya pake useReducer
-  karena tiap setState itu komponennya rerender (ngefek ke performa nanti). 
-  Cuman karena biar simpel ya gini dulu aja gpp (useReducer agak mbingungi)
-
-  Disini pas baru render component, fungsi didalam useEffect kepanggil, dia ngefetch API dari API-nya
-  Studio Ghibli (disclaimer: aku bukan wibu). Fetchnya pake axios biar gampang, terus render sesuai
-  kondisi state film / error / loading pake inline conditional.
-*/
-
 import React from "react";
 import {
   Button,
   Container,
   Nav,
   Navbar,
-  Jumbotron,
   Row,
   Col,
-  Spinner,
-  Alert,
-  Card,
 } from "react-bootstrap";
-import { Link, useHistory } from "react-router-dom";
-import { logout } from "utils/auth";
-import axios from "axios";
-import { GET_FILMS } from "constants/urls";
+import { Link } from "react-router-dom";
 import logo from '../images/horizontal-primary.png';
+import monitor from '../images/monitor.png';
+import GooglePlay from '../images/googlePlay.png';
 
 const Dashboard = () => {
-  const history = useHistory();
-  const [loading, setLoading] = React.useState(true);
-  const [error, setError] = React.useState(false);
-
-  const _onLogout = () => {
-    logout();
-    history.replace("/");
-  };
-
   return (
     <div className="benjol-bg">
       <Navbar fixed="top" bg="white" variant="light" expand="md" >
@@ -46,7 +22,7 @@ const Dashboard = () => {
               <img
                 alt=""
                 src={logo}
-                width='200'
+                width='180'
                 className="d-inline-block align-top"
               />
             </Navbar.Brand>
@@ -73,10 +49,24 @@ const Dashboard = () => {
             <Button variant="light" size="sm" className="mb-2 btn-sm font-weight-bold shadow p-3 mb-5 bg-white rounded-pill" style={{color:"#FCCA53", backgroundColor:"white", borderColor:"white"}}>Cari Sparepart</Button>
             </Link>
           </Col>
+          <Col>
+            <Link>
+              <Button variant="light" size="sm" className="mb-3 btn-sm font-weight-bold shadow p-2 bg-black" style={{ height:"70px", width:"200px", color:"white", backgroundColor:"black", borderColor:"white"}}>
+                <img width="40" height="40" src={monitor}></img>
+                <a style={{fontSize : 12 }}>DONWLOAD FOR Desktop</a>
+              </Button>
+            </Link>
+          </Col>
+          <Col>
+            <Link>
+              <Button variant="light" size="sm" className="mb-3 btn-sm font-weight-bold shadow p-2 bg-black" style={{ height:"70px", width:"200px", color:"white", backgroundColor:"black", borderColor:"white"}}>
+                <img width="40" height="40" src={GooglePlay}></img>
+                <a style={{fontSize : 15 }}>GET IT ON Google Play</a>
+              </Button>
+            </Link>
+          </Col>
         </Row>      
       </Container>
-        
-     
     </div>
   );
 };
