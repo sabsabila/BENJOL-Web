@@ -14,7 +14,7 @@ import GooglePlay from '../images/googlePlay.png';
 
 const Dashboard = () => {
   return (
-    <div className="benjol-bg">
+    <div className="benjol-bg" style={{'overflow-y': 'auto'}}>
       <Navbar fixed="top" bg="white" variant="light" expand="md" >
         <Container>
           <Link to="/">
@@ -49,21 +49,15 @@ const Dashboard = () => {
             <Button variant="light" size="sm" className="mb-2 btn-sm font-weight-bold shadow p-3 mb-5 bg-white rounded-pill" style={{color:"#FCCA53", backgroundColor:"white", borderColor:"white"}}>Cari Sparepart</Button>
             </Link>
           </Col>
-          <Col>
-            <Link>
-              <Button variant="light" size="sm" className="mb-3 btn-sm font-weight-bold shadow p-2 bg-black" style={{ height:"70px", width:"200px", color:"white", backgroundColor:"black", borderColor:"white"}}>
-                <img width="40" height="40" src={monitor}></img>
-                <a style={{fontSize : 12 }}>DONWLOAD FOR Desktop</a>
-              </Button>
-            </Link>
-          </Col>
-          <Col>
-            <Link>
-              <Button variant="light" size="sm" className="mb-3 btn-sm font-weight-bold shadow p-2 bg-black" style={{ height:"70px", width:"200px", color:"white", backgroundColor:"black", borderColor:"white"}}>
-                <img width="40" height="40" src={GooglePlay}></img>
-                <a style={{fontSize : 15 }}>GET IT ON Google Play</a>
-              </Button>
-            </Link>
+          <Col md={{span:12,offset:1}} className="mt-md-5" style={{display:"flex p-5"}}>
+            <h5 style={{color:"#636363"}} className="font-weight-bold">Dapatkan Aplikasi</h5>
+            <a href="https://intip.in/BenjolApk">
+              <img width="145" height="40" src={GooglePlay}></img>
+              </a>
+            &nbsp;&nbsp;
+            <a href="https://intip.in/BenjolDesktop">
+              <img width="145" height="40" src={monitor}></img>
+            </a>
           </Col>
         </Row>      
       </Container>

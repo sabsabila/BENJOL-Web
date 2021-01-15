@@ -78,7 +78,7 @@ axios
 }, []);
 
   return (
-    <div className="benjol-bg-sm">
+    <div className="benjol-bg-sm" style={{'overflow-y': 'auto'}}  >
       <Navbar sticky="top" bg="white" variant="light" expand="md" >
         <Container>
           <Link to="/">
@@ -125,7 +125,7 @@ axios
           </Container>
       </Alert>
 
-      <Container style={{maxHeight: "25rem", overflowX: "auto",  overflowY: "auto", position :"relative"}}>
+      <Container style={{overflowX: "auto",  overflowY: "auto", position :"relative"}}>
         <br/>
         {loading ? (
             <Row>
@@ -142,8 +142,8 @@ axios
           ) : bengkel ? (
             bengkel
               .reduce(function (accumulator, currentValue, currentIndex, array) {
-                if (currentIndex % 5   === 0)
-                  accumulator.push(array.slice(currentIndex, currentIndex + 5));
+                if (currentIndex % 6   === 0)
+                  accumulator.push(array.slice(currentIndex, currentIndex + 6));
                 return accumulator;
               }, [])
               .map((p) => {
@@ -152,10 +152,9 @@ axios
                   
                   {p.map((value) => {
                        return (
-                        <Col md="2">
-                          <Card className="mb-2 box-shadow">
-                            <Card.Body>
-                             
+                        <Col md="2" style={{display: 'flex', flexDirection: 'row'}}>
+                          <Card className="mb-2 box-shadow" style={{flex: 1}}>
+                            <Card.Body>                             
                             {(value.profile_picture == null)
                             ? <Card.Img top width="100%"  height={100} src={noImage} alt="bengkel"  /> 
                             : <Card.Img top width="100%"  height={100} src={BASE_URL+"/"+value.profile_picture} alt="bengkel"/>}

@@ -35,8 +35,8 @@ import  Virtuahive from '../images/Virtuahive.png';
 
 const AboutUs = () => {
   return (
-    <div className="benjol-bg-sm">
-      <Navbar fixed="top" bg="white" variant="light" expand="md" >
+    <div className="benjol-bg-sm" style={{'overflow-y': 'auto'}}>
+        <Navbar sticky="top" bg="white" variant="light" expand="md" >
         <Container>
           <Link to="/">
             <Navbar.Brand src={logo} className="benjol-brand">
@@ -51,16 +51,16 @@ const AboutUs = () => {
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ml-auto benjol-brand">
-              <Nav.Link href="/services" className="nav-link-custom" >Services</Nav.Link>
+              <Nav.Link href="/services" className="nav-link-custom">Services</Nav.Link>
               <Nav.Link href="/aboutus" className="nav-link-custom" active>About Us</Nav.Link>
               <Nav.Link href="/bengkel" className="nav-link-custom">Our Partners</Nav.Link>
             </Nav>
           </Navbar.Collapse>
         </Container>
-      </Navbar>   
-      
-      <Container style={{paddingTop: 140 , maxHeight: "39rem", overflowX: "auto",  overflowY: "auto", position :"relative"}}>
-        <Row>
+      </Navbar> 
+      <br />
+      <Container>
+        <Row> 
           <Col md={6} style={{paddingRight: 125}}>
             <h3 class="color-yellow" style={{fontSize: 36}}>
               Menyediakan Kebutuhan Bengkel Anda
@@ -140,7 +140,7 @@ const AboutUs = () => {
 
         <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
           <br/>
-          <h2 class="code" style={{ color: '#636363' }}>--- DEV TEAM ---</h2>
+          <h2 class="code color-yellow" style={{ color: '#636363' }}>DEV TEAM</h2>
           <br />
         </div>
 
@@ -208,7 +208,7 @@ const AboutUs = () => {
       </CardDeck>
       <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', paddingTop : 50}}>
           <br/>
-          <h2 class="code" style={{ color: '#636363' }}>Sponsored By</h2>
+          <h2 class="code color-yellow">Sponsored By</h2>
           <br />
       </div>
         <Row>
@@ -228,7 +228,7 @@ const AboutUs = () => {
 
         <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', paddingTop : 60}}>
           <br/>
-            <h2 style={{ color: '#636363' }}>Supported By</h2>
+            <h2 class="code color-yellow">Supported By</h2>
           <br />
         </div>
 
@@ -252,7 +252,7 @@ const AboutUs = () => {
 
         <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', paddingTop : 30}}>
           <br/>
-            <h2 style={{ color: '#636363' }}>Supervisor and Mentors</h2>
+            <h2 class="code color-yellow">Supervisor and Mentors</h2>
           <br/>
         </div>
 
@@ -303,6 +303,7 @@ const AboutUs = () => {
           </Card>
         </CardDeck>
       </Container>
+      <br/><br/>
     </div>
   );
 };

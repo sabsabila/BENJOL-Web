@@ -16,7 +16,7 @@ import logo from '../images/horizontal-primary.png';
 
 const Services = () => {
   return (
-    <div className="benjol-bg-sm">
+    <div className="benjol-bg-sm" style={{'overflow-y': 'auto'}}>
       <Navbar fixed="top" bg="white" variant="light" expand="md" >
         <Container>
           <Link to="/">
