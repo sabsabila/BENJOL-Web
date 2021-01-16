@@ -6,7 +6,7 @@ import {
   Navbar,
   Form,
   Row,
-  Col, Spinner,Card,
+  Col, Spinner,Card, Media,
   Image, Alert
 } 
 
@@ -77,113 +77,93 @@ axios
   });
 }, []);
 
-  return (
-    <div className="benjol-bg-sm" style={{'overflow-y': 'auto'}}  >
-      <Navbar sticky="top" bg="white" variant="light" expand="md" >
-        <Container>
-          <Link to="/">
-            <Navbar.Brand src={logo} className="benjol-brand">
-              <img
-                alt=""
-                src={logo}
-                width='180'
-                className="d-inline-block align-top"
-              />
-            </Navbar.Brand>
-          </Link>
-          <Navbar.Toggle aria-controls="basic-navbar-nav" />
-          <Navbar.Collapse id="basic-navbar-nav">
-          <Form inline expand="md" >
-            <Form.Control value={keyword} style={{width: 400}} type="text" placeholder="Cari bengkel" size="sm" className="mb-1 mr-sm-1 rounded-pill" onChange={e=>{setKeyword(e.target.value)}} />
-            <Button onClick={handleClick} size="sm" className="button-custom fa fa-search rounded-pill mr-sm-5" type="submit">Search</Button>
-          </Form>
-          <Nav className="ml-auto benjol-brand">
-              <Nav.Link href="/services" className="nav-link-custom">Services</Nav.Link>
-              <Nav.Link href="/aboutus" className="nav-link-custom">About Us</Nav.Link>
-              <Nav.Link href="/bengkel" className="nav-link-custom" active>Our Partners</Nav.Link>
-            </Nav>
-          </Navbar.Collapse>
-        </Container>
-      </Navbar>
-      
-        <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
-          <br/>
-         
-          <Link to="/ourpartners">
-            <Button size="sm" className="button-custom rounded-pill" type="submit">Join Us!</Button>
-          </Link> 
-          <br />
-          
-        </div>
-
-      <Alert show={show} onClose={() => setShow(false)} dismissible>
-          <Container className="d-flex justify-content-center" style={{width:'30%'}}>
-            <Col className="col-md-auto" style={{marginBottom:'50em'}}>
-            <Image src={imageEmpty} alt="empty sparepart"style={{width:"100%",height:"100%"}}></Image>
-            <h6 style={{fontWeight:"bold"}}>Bengkel is not found in the list</h6>
-            </Col>
-          </Container>
-      </Alert>
-
-      <Container style={{overflowX: "auto",  overflowY: "auto", position :"relative"}}>
+return (
+  <div className="benjol-bg-sm">
+    <Navbar sticky="top" bg="white" variant="light" expand="md" >
+      <Container>
+        <Link to="/">
+          <Navbar.Brand className="benjol-brand">BENJOL | <i> Bengkel Jadi Online</i></Navbar.Brand>
+        </Link>
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Collapse id="basic-navbar-nav">
+        <Form inline expand="md" >
+          <Form.Control value={keyword} style={{width: 400}} type="text" placeholder="Cari bengkel" size="sm" className="mb-1 mr-sm-1 rounded-pill" onChange={e=>{setKeyword(e.target.value)}} />
+          <Button onClick={handleClick} size="sm" className="button-custom fa fa-search rounded-pill mr-sm-5" type="submit">Search</Button>
+        </Form>
+        <Nav className="ml-auto benjol-brand">
+            <Nav.Link href="/services" className="nav-link-custom">Services</Nav.Link>
+            <Nav.Link href="/aboutus" className="nav-link-custom">About Us</Nav.Link>
+            <Nav.Link href="/bengkel" className="nav-link-custom" active>Our Partners</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Container>
+    </Navbar>
+      <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
         <br/>
-        {loading ? (
-            <Row>
-              <Col>
-                <Spinner
-                  animation="border"
-                  variant="primary"
-                  className="d-flex justify-content-center ml-auto mr-auto"
-                >
-                  <span className="sr-only">Loading...</span>
-                </Spinner>
-              </Col>
-            </Row>
-          ) : bengkel ? (
-            bengkel
-              .reduce(function (accumulator, currentValue, currentIndex, array) {
-                if (currentIndex % 6   === 0)
-                  accumulator.push(array.slice(currentIndex, currentIndex + 6));
-                return accumulator;
-              }, [])
-              .map((p) => {
-                return (
-                <Row className="mb-4">
-                  
+        <Link to="/ourpartners">
+          <Button size="sm" className="button-custom rounded-pill" type="submit">Join Us!</Button>
+        </Link> 
+        <br />
+      </div>
+
+    <Container style={{maxHeight: "30rem", overflowX: "auto",  overflowY: "auto", position :"relative"}}>
+      <Alert show={show} onClose={() => setShow(false)} dismissible>
+        <Container className="d-flex justify-content-center" style={{width:'30%'}}>
+          <Col className="col-md-auto" style={{marginBottom:'50em'}}>
+          <img src={imageEmpty} alt="empty sparepart"style={{width:"100%",height:"100%"}}></img>
+          <h6 style={{fontWeight:"bold"}}>Bengkel is not found in the list</h6>
+        </Col>
+        </Container>
+      </Alert>
+      {loading ? (
+          <Row>
+            <Col>
+              <Spinner
+                animation="border"
+                variant="primary"
+                className="d-flex justify-content-center ml-auto mr-auto"
+              >
+                <span className="sr-only">Loading...</span>
+              </Spinner>
+            </Col>
+          </Row>
+        ) : bengkel ? (
+          bengkel
+            .reduce(function (accumulator, currentValue, currentIndex, array) {
+              if (currentIndex % 4 === 0)
+                accumulator.push(array.slice(currentIndex, currentIndex + 4));
+              return accumulator;
+            }, [])
+            .map((p) => {
+              return (
+                <Row>
                   {p.map((value) => {
-                       return (
-                        <Col md="2" style={{display: 'flex', flexDirection: 'row'}}>
-                          <Card className="mb-2 box-shadow" style={{flex: 1}}>
-                            <Card.Body>                             
-                            {(value.profile_picture == null)
-                            ? <Card.Img top width="100%"  height={100} src={noImage} alt="bengkel"  /> 
-                            : <Card.Img top width="100%"  height={100} src={BASE_URL+"/"+value.profile_picture} alt="bengkel"/>}
-                            <Card.Text style={{color:"#FCCA53", fontWeight: "bold"}}>{value.name}</Card.Text>
-                            <div className="d-flex justify-content-between align-items-center">
-                              <small style={{fontWeight: "bold"}}>
-                                {value.address}
-                              </small>
-                            </div>
-                            <div className="d-flex justify-content-between align-items-center">
-                              <small className="text-muted">
-                                +{value.phone_number}
-                              </small>
-                            </div>
-                            </Card.Body>
-                          </Card>
-                        </Col>
-                      );
-                
+                    console.log(BASE_URL+value.profile_picture);
+                    return (
+                      <Col md="3">
+                        <Media style={{ paddingTop: 30 }}>
+                          {(value.profile_picture == null)
+                            ? <img variant='rounded' width={90} height={90} src={noImage} alt="noImage"/> 
+                            : <img variant='rounded' width={90} height={90} src={BASE_URL+ "/" +value.profile_picture} alt="bengkel"/>}
+                          
+                          <Media.Body>
+                            <h6 style={{ paddingLeft: 10, fontSize: 14, fontWeight: "bold", color:"#FCCA53"}}>{value.name}</h6>
+                            <p style={{ paddingLeft: 10, fontSize: 10}}>{value.address}</p>
+                            <p className="text-muted" style={{ paddingLeft: 10, fontSize: 12}}>{"+" + value.phone_number}</p>
+                          </Media.Body>
+                        </Media>
+                    </Col>
+                    );
                   })}
                 </Row>
               );
-              })
-          ) : (
-            error && <Alert variant="danger">Error bang</Alert>
-          )}
-      </Container>
-    </div>
-  );
+            })
+        ) : (
+          error && <Alert variant="danger">Error bang</Alert>
+        )}
+    </Container>
+  </div>
+);
 };
 
 export default Bengkels;
