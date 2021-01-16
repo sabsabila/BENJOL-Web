@@ -69,8 +69,7 @@ const Spareparts = () => {
   }, []);
 
   return (
-    <div className="benjol-bg-sm" style={{'overflow-y': 'auto'}}>
-      
+    <div className="benjol-bg-sm" style={{'overflow-y': 'auto'}}>  
       <Navbar sticky="top" bg="white" variant="light" expand="md" >
         <Container>
           <Link to="/">
@@ -107,7 +106,7 @@ const Spareparts = () => {
          </Container>
       </Alert>
      
-      <Container style={{maxHeight: "30rem", overflowX: "auto",  overflowY: "auto", position :"relative"}}>
+      <Container style={{position :"relative"}}>
         <br />
        {loading ? (
           <Row>

@@ -49,7 +49,7 @@ const handleClick = (e) => {
         console.log("a");
         setLoading(false);
         console.log(response.data);
-        if(response.data.bengkels.length === 0){
+        if(response.data.bengkel.length === 0){
           setShow(true);
         }
         setBengkel(response.data.bengkel);
@@ -78,26 +78,33 @@ axios
 }, []);
 
 return (
-  <div className="benjol-bg-sm">
-    <Navbar sticky="top" bg="white" variant="light" expand="md" >
-      <Container>
-        <Link to="/">
-          <Navbar.Brand className="benjol-brand">BENJOL | <i> Bengkel Jadi Online</i></Navbar.Brand>
-        </Link>
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
-        <Form inline expand="md" >
-          <Form.Control value={keyword} style={{width: 400}} type="text" placeholder="Cari bengkel" size="sm" className="mb-1 mr-sm-1 rounded-pill" onChange={e=>{setKeyword(e.target.value)}} />
-          <Button onClick={handleClick} size="sm" className="button-custom fa fa-search rounded-pill mr-sm-5" type="submit">Search</Button>
-        </Form>
-        <Nav className="ml-auto benjol-brand">
-            <Nav.Link href="/services" className="nav-link-custom">Services</Nav.Link>
-            <Nav.Link href="/aboutus" className="nav-link-custom">About Us</Nav.Link>
-            <Nav.Link href="/bengkel" className="nav-link-custom" active>Our Partners</Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
-      </Container>
-    </Navbar>
+  <div className="benjol-bg-sm" style={{'overflow-y': 'auto'}}>  
+      <Navbar sticky="top" bg="white" variant="light" expand="md" >
+        <Container>
+          <Link to="/">
+             <Navbar.Brand src={logo} className="benjol-brand">
+              <img
+                alt=""
+                src={logo}
+                width='180'
+                className="d-inline-block align-top"
+              />
+            </Navbar.Brand>
+          </Link>
+          <Navbar.Toggle aria-controls="basic-navbar-nav" />
+          <Navbar.Collapse id="basic-navbar-nav">
+          <Form inline expand="md" >
+            <Form.Control value={keyword} style={{width: 400}} type="text" placeholder="Cari bengkel" size="sm" className="mb-1 mr-sm-1 rounded-pill" onChange={e=>{setKeyword(e.target.value)}} />
+            <Button onClick={handleClick} size="sm" className="button-custom fa fa-search rounded-pill mr-sm-5" type="submit">Search</Button>
+          </Form>
+          <Nav className="ml-auto benjol-brand">
+              <Nav.Link href="/services" className="nav-link-custom">Services</Nav.Link>
+              <Nav.Link href="/aboutus" className="nav-link-custom">About Us</Nav.Link>
+              <Nav.Link href="/bengkel" className="nav-link-custom" active>Our Partners</Nav.Link>
+            </Nav>
+          </Navbar.Collapse>
+        </Container>
+      </Navbar>
       <div style={{display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center'}}>
         <br/>
         <Link to="/ourpartners">
@@ -106,7 +113,7 @@ return (
         <br />
       </div>
 
-    <Container style={{maxHeight: "30rem", overflowX: "auto",  overflowY: "auto", position :"relative"}}>
+    <Container style={{position :"relative"}}>
       <Alert show={show} onClose={() => setShow(false)} dismissible>
         <Container className="d-flex justify-content-center" style={{width:'30%'}}>
           <Col className="col-md-auto" style={{marginBottom:'50em'}}>
