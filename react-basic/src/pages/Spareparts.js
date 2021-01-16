@@ -107,7 +107,7 @@ const Spareparts = () => {
          </Container>
       </Alert>
      
-      <Container>
+      <Container style={{maxHeight: "30rem", overflowX: "auto",  overflowY: "auto", position :"relative"}}>
         <br />
        {loading ? (
           <Row>
