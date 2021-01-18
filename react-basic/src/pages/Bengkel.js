@@ -113,7 +113,7 @@ return (
         <br />
       </div>
 
-    <Container style={{position :"relative"}}>
+    <Container style={{maxHeight: "30rem", overflowX: "auto",  overflowY: "auto", position :"relative"}}>
       <Alert show={show} onClose={() => setShow(false)} dismissible>
         <Container className="d-flex justify-content-center" style={{width:'30%'}}>
           <Col className="col-md-auto" style={{marginBottom:'50em'}}>
